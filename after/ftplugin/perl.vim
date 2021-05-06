@@ -12,7 +12,7 @@ endif
 if exists("g:pl_makeprg")
     let &l:makeprg=expand(g:pl_makeprg)
 else
-    let &l:makeprg="perlcritic"
+    let &l:makeprg="perl\ -c"
 endif
 
 " settings for vim-perl
