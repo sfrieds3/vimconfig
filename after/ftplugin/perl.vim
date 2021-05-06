@@ -3,7 +3,7 @@ setlocal iskeyword-=:
 
 setlocal shiftwidth=2 softtabstop=2 tabstop=2
 
-set foldmethod=indent
+setlocal foldmethod=indent nofoldenable
 
 if exists("g:pl_formatprg")
     let &l:formatprg=expand(g:pl_formatprg)
