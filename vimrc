@@ -14,7 +14,7 @@ augroup CustomizeTheme
     autocmd ColorScheme * call highlights#MyHighlights()
 augroup END
 
-colorscheme apprentice
+colorscheme jellybeans
 
 " }}}
 
@@ -253,7 +253,7 @@ endif
 " buffer/tab switching
 nnoremap gb :bnext<CR>
 nnoremap gB :bprevious<CR>
-nnoremap ]b :next<CR>
+nnoremap ]b :bnext<CR>
 nnoremap [b :bprevious<CR>
 nnoremap ]t :tabnext<CR>
 nnoremap [t :tabprevious<CR>
