@@ -14,7 +14,8 @@ augroup CustomizeTheme
     autocmd ColorScheme * call highlights#MyHighlights()
 augroup END
 
-colorscheme jellybeans
+colorscheme lucius
+LuciusBlack
 
 " }}}
 
