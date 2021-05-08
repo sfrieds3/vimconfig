@@ -39,6 +39,7 @@ set hlsearch
 set shiftwidth=4
 let softtabstop = &shiftwidth
 set tabstop=4
+set scrolloff=0
 set shiftround
 set expandtab
 set smarttab
@@ -348,6 +349,10 @@ if !exists(':cdo')
             \ catch /^Vim\%((\a\+)\)\=:E\%(553\|42\):/ |
             \ endtry
 endif
+
+" better scrolling
+noremap <expr> <C-b> max([winheight(0) - 2, 1]) . "\<C-u>" . (line('.') < 1         + winheight(0) ? 'H' : 'L')
+noremap <expr> <C-f> max([winheight(0) - 2, 1]) . "\<C-d>" . (line('.') > line('$') - winheight(0) ? 'L' : 'H')
 
 " redir
 command! -nargs=1 -complete=command -bar -range Redir silent call redir#Redir(<q-args>, <range>, <line1>, <line2>)
