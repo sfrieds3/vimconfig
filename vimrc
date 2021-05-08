@@ -222,11 +222,6 @@ function! g:Undotree_CustomMap()
 endfunction
 " }}}
 
-" linediff {{{
-nnoremap _da ggVG:LinediffAdd<CR><C-o><C-o>
-nnoremap _ds :LinediffShow<CR>
-" }}}
-
 " }}}
 
 " mappings {{{
@@ -382,6 +377,7 @@ nnoremap _gb :GitBranch<CR>
 nnoremap _dh :Diff HEAD<CR>
 nnoremap _dd :Diff<CR>
 nnoremap _do :diffoff<CR>
+nnoremap <expr> \<space> ":\<C-u>".(&diff?"diffoff":"diffthis")."\<CR>"
 
 " quick shell command
 nnoremap _! :!<Space>
