@@ -106,6 +106,11 @@ runtime! macros/matchit.vim
 " easy manpages with <leader>K or :Man <manpage>
 runtime! ftplugin/man.vim
 
+" cfilter
+if has('patch-8.1.0311')
+    packadd cfilter
+endif
+
 " no ruler by default
 if !&ruler
   set ruler
