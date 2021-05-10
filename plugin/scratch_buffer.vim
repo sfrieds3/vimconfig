@@ -10,5 +10,5 @@ endif
 let loaded_scratch_buffer = 1
 
 " Command to open scratch buffer
-command! -bar -count=0 -nargs=* ScratchBuffer
-      \ call scratch_buffer#(<q-mods>, <q-count>, <f-args>)
+command! Scratch
+      \ call scratch_buffer#ScratchBuffer()
