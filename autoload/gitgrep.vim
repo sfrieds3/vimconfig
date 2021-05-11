@@ -17,4 +17,5 @@ function! gitgrep#GitGrep(...)
     execute s
     " restore grepprg to original setting
     let &grepprg = save
+    redraw!
 endfunction

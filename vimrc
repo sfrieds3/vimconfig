@@ -295,10 +295,6 @@ nnoremap \b :buffers<CR>:b<Space>
 " redraw screen
 nnoremap \! :redraw!<CR>
 
-" gitgrep
-command! -nargs=+ GitGrep call gitgrep#GitGrep(<f-args>)
-nnoremap <Space> :GitGrep<Space>
-
 " highlight interesting words
 nnoremap _1 :call hiwords#HiInterestingWord(1)<cr>
 nnoremap _2 :call hiwords#HiInterestingWord(2)<cr>
@@ -463,11 +459,15 @@ nnoremap <F5> :lmake %<CR>
 " view all todo in quickfix window
 nnoremap <silent> \vt :exec("lvimgrep /todo/j %")<cr>:exec("lopen")<CR>
 
+" gitgrep
+command! -nargs=+ GitGrep call gitgrep#GitGrep(<f-args>)
+nnoremap <Space> :GitGrep<Space>
+
 " gitgrep for word under cursor in current file and open in location list
-nnoremap <silent> gr :exec("GitGrep ".expand("<cword>"). " %")<CR>:redraw!<CR>
+nnoremap <silent> gr :exec("GitGrep ".expand("<cword>"). " %")<CR>
 
 " gitgrep for word under cursor in current directory open in quickfix
-nnoremap <silent> gR :exec("GitGrep ".expand("<cword>"))<CR>:redraw!<CR>
+nnoremap <silent> gR :exec("GitGrep ".expand("<cword>"))<CR>
 
 " Do and insert results of math equations via python
 " from https://github.com/alerque/que-vim/blob/master/.config/nvim/init.vim

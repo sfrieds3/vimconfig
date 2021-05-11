@@ -24,6 +24,8 @@ else
 endif
 
 setlocal suffixesadd=.py
+let &l:include = 'from\|import'
+let &l:define = '^\s*#\s*(def|class)\s+'
 
 " pylint
 "let &l:errorformat="%A%f:%l:\ %m,%C,%Z%m"
@@ -31,3 +33,8 @@ setlocal suffixesadd=.py
 let &l:errorformat="%f:%l:\ [E%n]\ %m"
 
 let g:python_highlight_space_errors = 0
+
+function! InsertPdOptionContext()
+    call append(line('.'), "with pd.option_context('display.max_rows', None, 'display.max_columns', None):")
+    normal! 2j<Tab>
+endfunction

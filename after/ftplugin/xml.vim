@@ -1,4 +1,5 @@
-setlocal equalprg=xmllint\ --format\ -
+setlocal shiftwidth=2 softtabstop=2 tabstop=2
+setlocal formatprg=xmllint\ --format\ -
 
 " pretty format xml {{{
 " https://vim.fandom.com/wiki/Pretty-formatting_XML
