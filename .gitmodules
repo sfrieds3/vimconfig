@@ -22,3 +22,6 @@
 [submodule "pack/bundle/start/vim-fugitive"]
 	path = pack/bundle/start/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
+[submodule "pack/bundle/start/vim-polyglot"]
+	path = pack/bundle/start/vim-polyglot
+	url = https://github.com/sheerun/vim-polyglot.git
