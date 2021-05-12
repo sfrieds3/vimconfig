@@ -2,3 +2,5 @@
 tmp/*
 **/tags
 config/*
+config/
+!**/.gitkeep

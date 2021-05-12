@@ -227,14 +227,13 @@ function! g:Undotree_CustomMap()
 endfunction
 " }}}
 
+" fugitive {{{
+nnoremap _G :Glcd<CR>
+" }}}
+
 " }}}
 
 " mappings {{{
-
-nnoremap j gj
-nnoremap k gk
-nnoremap gj j
-nnoremap gk k
 
 " allow c-j/c-k for cycling through insert mode completions
 inoremap <C-j> <C-n>
@@ -245,6 +244,12 @@ nnoremap <BS> <C-^>
 
 " default Y mapping is just.. wrong
 nnoremap Y y$
+
+" don't clobber unnamed register when pasting over text
+xnoremap <silent> p p:if v:register == '"'<Bar>let @@=@0<Bar>endif<cr>
+
+" change word under cursor and set as last search pattern
+nnoremap <silent> c<Tab> :let @/=expand('<cword>')<cr>cgn
 
 " insert current line into command line
 if !has('patch-8.0.1787')
@@ -290,7 +295,8 @@ nnoremap \< :<C-U>'[,']<<CR>
 nnoremap \> :<C-U>'[,']><CR>
 
 " buffers and ready to switch
-nnoremap \b :buffers<CR>:b<Space>
+" nnoremap \b :buffers<CR>:b<Space>
+nnoremap \b :B<CR>
 
 " redraw screen
 nnoremap \! :redraw!<CR>
@@ -412,6 +418,7 @@ nnoremap _V :<C-u>let b: t: w:<CR>
 nnoremap _h :echo synIDattr(synID(line("."), col("."), 1), "name")<CR>
 
 " toggle line and column markers
+nnoremap <F3> :set cursorline! cursorcolumn!<CR>
 nnoremap \c :set cursorline! cursorline?<cr>
 nnoremap \C :set cursorcolumn! cursorcolumn?<cr>
 
@@ -419,8 +426,9 @@ nnoremap \C :set cursorcolumn! cursorcolumn?<cr>
 nnoremap _Cd :cd %:p:h<cr>:pwd<cr>
 
 " open scratch buffers
-nnoremap \~ :<C-U>ScratchBuffer<CR>
-nnoremap \` :<C-U>vertical ScratchBuffer<CR>
+nnoremap \~ :<C-U>Scratch<CR>
+nnoremap \` :<C-U>execute 'vsplit Scratch'<CR>
+
 
 " search for non-ASCII characters
 nnoremap \a /[^\x00-\x7F]<CR>
@@ -428,6 +436,9 @@ nnoremap \a /[^\x00-\x7F]<CR>
 " poor man's c_CTRL-G/c_CTRL-T.. use c-j/c-k to move thru search res as typing
 cnoremap <expr> <C-g> getcmdtype() =~ '[\/?]' ? "<CR>/<C-r>/" : "<C-g>"
 cnoremap <expr> <C-t> getcmdtype() =~ '[\/?]' ? "<CR>?<C-r>/" : "<C-t>"
+
+" list and be ready to jump to cword
+nnoremap <F4> [I:let nr = input("Goto: ")<Bar>exe "normal " . nr ."[\t"<CR>
 
 " ilist
 nnoremap \i :Ilist!<Space>
