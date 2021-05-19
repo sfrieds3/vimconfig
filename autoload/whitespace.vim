@@ -10,6 +10,10 @@ function! whitespace#StripTrailingWhitespace() range
         silent! execute "%s/\\s\\+$//en"
         execute "redir END"
         silent! call preserve#Preserve(":%s/\\s\\+$//e")
-        execute "echo numclean"
+        if strlen(numclean) >0
+            execute 'echo substitute(numclean, "\n", "", "g")'
+        else
+            execute 'echo "No trailing whitespace..."'
+        endif
     endif
 endfunction

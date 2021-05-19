@@ -12,25 +12,26 @@ endif
 nnoremap <buffer> <silent> \f call PythonFuncGrep()
 
 if exists("g:py_formatprg")
-    let &l:formatprg=g:py_formatprg
+    let &l:formatexpr=g:py_formatprg
 else
-    let &l:formatprg="yapf"
+    let &l:formatexpr='yapf'
 endif
 
 if exists("g:py_makeprg")
-    let &l:makeprg=g:py_makeprg
+    " e.g. let g:py_makeprg='pycodestyle\ --ignore=E501\ --format=pylint'
+    execute "setlocal makeprg=" . g:py_makeprg
 else
-    let &l:makeprg="autopep8 --ignore=E501,E261,E262,E265,E266 --format=pylint "
+    setlocal makeprg='autopep8\ --ignore=E501,E261,E262,E265,E266\ --format=pylint'
 endif
 
 setlocal suffixesadd=.py
-let &l:include = 'from\|import'
-let &l:define = '^\s*#\s*(def|class)\s+'
+setlocal include="from\|import"
+setlocal define="^\s*#\s*(def|class)\s+"
 
 " pylint
-"let &l:errorformat="%A%f:%l:\ %m,%C,%Z%m"
+"let &b:errorformat=%A%f:%l:\ %m,%C,%Z%m
 " pep8/pycodestyle
-let &l:errorformat="%f:%l:\ [E%n]\ %m"
+setlocal errorformat=%f:%l:\ [E%n]\ %m
 
 let g:python_highlight_space_errors = 0
 
@@ -38,3 +39,6 @@ function! InsertPdOptionContext()
     call append(line('.'), "with pd.option_context('display.max_rows', None, 'display.max_columns', None):")
     normal! 2j<Tab>
 endfunction
+
+" undo changes
+let b:undo_ftplugin = "setlocal sw< sts< ts< fdm< fen< ofu< sua< inc< mp< efm< def<"

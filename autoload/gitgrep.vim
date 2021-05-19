@@ -4,18 +4,12 @@ endif
 let g:loaded_gitgrep = 1
 
 function! gitgrep#GitGrep(...)
-    " store grepprg to restore after running
-    let save = &grepprg
-    " set grepprg to git grep for use in function
-    set grepprg=git\ grep\ -n\ $*
-    let s = 'grep!'
-    let s = 'silent ' . s
+    let args = ''
     for i in a:000
-        let s = s . ' ' . i
+        let args = args . ' ' . i
     endfor
+    let s = "cgetexpr system('git grep -in ' . args . ' *')""
     let s = s . ' | copen'
     execute s
-    " restore grepprg to original setting
-    let &grepprg = save
     redraw!
 endfunction

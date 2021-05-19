@@ -27,6 +27,7 @@ set hidden
 set autoread
 set nomodeline
 set ignorecase
+set infercase
 set smartcase
 set showmatch
 set splitbelow
@@ -79,6 +80,9 @@ set ttimeoutlen=10
 let mapleader = "\\"
 let maplocalleader = "_"
 
+" use git grep as default grep prg
+set grepprg=git\ grep\ -n\ $*
+
 " enable syntax
 if !exists("g:syntax_on")
     syntax enable
@@ -87,7 +91,7 @@ endif
 set wildmenu
 set wildignore+=*.pyc
 set wildignorecase
-set wildmode=list,full
+set wildmode=list:longest,full
 set wildcharm=<C-z>
 
 set tags=./tags;,tags;
@@ -98,7 +102,7 @@ set complete+=d
 set completeopt=longest,menuone,preview
 
 " simple default path
-set path+=.,,
+set path=.,,
 
 " use matchit
 runtime! macros/matchit.vim
@@ -279,6 +283,7 @@ nnoremap [l :lprevious<CR>
 nnoremap [L :lfirst<CR>
 nnoremap ]L :llast<CR>
 nnoremap \l :lclose<CR>
+nnoremap \<BS> :cclose<Bar>lclose<CR>
 
 " Leader,{ and Leader,} move to top and bottom of indent region
 nmap \{ <Plug>(VerticalRegionUp)
@@ -330,13 +335,10 @@ nnoremap \D :call showdecl#ShowDeclaration(1)<CR>
 " substitute operator
 nmap <silent> \s  m':set operatorfunc=substitute#Substitute<CR>g@
 
-" Global <pattern> -> location list
-" original soure: https://gist.github.com/romainl/f7e2e506dc4d7827004e4994f1be2df6
-set errorformat^=%f:%l:%c\ %m
-" command! -nargs=1 Global lgetexpr filter(map(getline(1,'$'), {key, val -> expand("%") . ":" . (key + 1) . ":1 " . val }), { idx, val -> val =~ <q-args> })
-command! -nargs=1 Global lgetexpr filter(map(getline(1,'$'), 'expand("%") . ":" . (v:key + 1) . ":1 " . v:val'), 'v:val =~ <q-args>') | lopen
-nnoremap gsg :Global<Space>
-nnoremap <C-s> :Global<Space>
+" FGrep <pattern> -> quickfix
+command! -nargs=1 FGrep cgetexpr system('grep -Hin ' . <q-args> . ' ' . expand('%')) | copen
+nnoremap <Space> :FGrep<Space>
+nnoremap <C-s> :FGrep<Space>
 
 " cdo/cfdo if not available
 " from: https://www.reddit.com/r/vim/comments/iiatq6/is_there_a_good_way_to_do_vim_global_find_and/
@@ -392,7 +394,7 @@ nnoremap _! :!<Space>
 " show all registers
 nnoremap \y :<C-u>registers<CR>
 " show marks
-nnoremap \k :<C-u>marks<CR> 
+nnoremap \k :<C-u>marks<CR>
 " command history
 nnoremap \H :<C-u>history :<CR>
 nnoremap \h q:
@@ -426,9 +428,7 @@ nnoremap \C :set cursorcolumn! cursorcolumn?<cr>
 nnoremap _Cd :cd %:p:h<cr>:pwd<cr>
 
 " open scratch buffers
-nnoremap \~ :<C-U>Scratch<CR>
-nnoremap \` :<C-U>execute 'vsplit Scratch'<CR>
-
+nnoremap \` :<C-U>Scratch<CR>
 
 " search for non-ASCII characters
 nnoremap \a /[^\x00-\x7F]<CR>
@@ -472,7 +472,7 @@ nnoremap <silent> \vt :exec("lvimgrep /todo/j %")<cr>:exec("lopen")<CR>
 
 " gitgrep
 command! -nargs=+ GitGrep call gitgrep#GitGrep(<f-args>)
-nnoremap <Space> :GitGrep<Space>
+nnoremap gsg :GitGrep<Space>
 
 " gitgrep for word under cursor in current file and open in location list
 nnoremap <silent> gr :exec("GitGrep ".expand("<cword>"). " %")<CR>
@@ -493,8 +493,8 @@ inoremap <C-u> <Esc>gUiwea
 " Shift-Tab enters actual tab
 inoremap <S-Tab> <C-v><Tab>
 
-" stay where you are on * from fatih (http://www.github.com/fatih/dotfiles)
-nnoremap <silent> * :let stay_star_view = winsaveview()<cr>*:call winrestview(stay_star_view)<cr>
+" stay where you are on *
+nnoremap <silent> * :let lloc = winsaveview()<cr>*:call winrestview(lloc)<cr>
 
 " Disable highlight
 nnoremap <C-l> :nohlsearch<cr>
