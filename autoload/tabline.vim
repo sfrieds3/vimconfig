@@ -14,7 +14,6 @@ function! tabline#Tabline()
         let bufnr = buflist[winnr - 1]
         let bufname = bufname(bufnr)
         let bufmodified = getbufvar(bufnr, "&mod")
-        let ostatus = expand(ObsessionStatus())
 
         let s .= '%' . tab . 'T'
         let s .= (tab == tabpagenr() ? '%#TabLineSel#' : '%#TabLine#')
@@ -24,7 +23,6 @@ function! tabline#Tabline()
         if bufmodified
             let s .= '[+] '
         endif
-        let s .= (tab == tabpagenr() ? printf('%s', ostatus) : '')
     endfor
 
     let s .= '%#TabLineFill#'
