@@ -80,8 +80,13 @@ set ttimeoutlen=10
 let mapleader = "\\"
 let maplocalleader = "_"
 
-" use git grep as default grep prg
-set grepprg=git\ grep\ -n\ $*
+" unless rg is installed
+if executable('rg')
+    set grepprg=rg\ -HS\ --no-heading\ --vimgrep
+    set errorformat^=%f:%l:%c:%m,%f
+else
+    set grepprg=git\ grep\ -n\ $*
+endif
 
 " enable syntax
 if !exists("g:syntax_on")
@@ -340,7 +345,7 @@ nnoremap \D :call showdecl#ShowDeclaration(1)<CR>
 nmap <silent> \s  m':set operatorfunc=substitute#Substitute<CR>g@
 
 " FGrep <pattern> -> quickfix
-command! -nargs=1 FGrep cgetexpr system('grep -Hin ' . <q-args> . ' ' . expand('%')) | copen
+command! -nargs=1 FGrep cgetexpr system(&grepprg . ' ' . <q-args> . ' ' . expand('%')) | copen
 nnoremap <Space> :FGrep<Space>
 nnoremap <C-s> :FGrep<Space>
 
