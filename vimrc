@@ -197,6 +197,8 @@ set tabline=%!tabline#Tabline()
 
 " fzf {{{
 set rtp+=~/bin/fzf
+" don't use annoying popup
+let g:fzf_layout = { 'down': '~40%' }
 " " }}}
 
 " ctrlp {{{
