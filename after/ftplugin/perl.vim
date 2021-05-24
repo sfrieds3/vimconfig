@@ -18,10 +18,12 @@ else
     setlocal makeprg='perl\ -c'
 endif
 
+setlocal equalprg='perltidy\ -st'
+
 " settings for vim-perl
 "let g:perl_include_pod = 1
 "let g:perl_no_scope_in_variables = 0
 "let g:perl_no_extended_vars = 0
 
 " undo changes
-let b:undo_ftplugin = "setlocal sw< sts< ts< fdm< fen< isk< mp< et<"
+let b:undo_ftplugin = "setlocal sw< sts< ts< fdm< fen< isk< mp< et< ep<"
