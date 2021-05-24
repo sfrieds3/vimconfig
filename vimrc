@@ -14,8 +14,7 @@ augroup CustomizeTheme
     autocmd ColorScheme * call highlights#MyHighlights()
 augroup END
 
-colorscheme lucius
-LuciusBlack
+colorscheme apprentice
 
 " }}}
 
@@ -61,11 +60,18 @@ set mouse=a
 set formatoptions=qrn1j
 set nrformats-=octal
 set showbreak=...
-set listchars+=extends:>       " Unwrapped text to screen right
-set listchars+=precedes:<      " Unwrapped text to screen left
-set listchars+=tab:>-          " Tab characters, preserve width
-set listchars+=trail:_         " Trailing spaces
-silent! set listchars+=nbsp:+  " Non-breaking spaces
+
+" listchars
+set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
+set list
+
+" do not show listchars in insert
+augroup ListChar
+    autocmd!
+    autocmd InsertEnter * set nolist
+    autocmd InsertLeave * set list
+augroup END
+
 
 " allow moving beyond buffer text in visual block
 if exists('+virtualedit')
@@ -80,13 +86,8 @@ set ttimeoutlen=10
 let mapleader = "\\"
 let maplocalleader = "_"
 
-" unless rg is installed
-if executable('rg')
-    set grepprg=rg\ -HS\ --no-heading\ --vimgrep
-    set errorformat^=%f:%l:%c:%m,%f
-else
-    set grepprg=git\ grep\ -n\ $*
-endif
+" git grep default grepprg
+set grepprg=git\ grep\ -n\ $*
 
 " enable syntax
 if !exists("g:syntax_on")
@@ -195,12 +196,6 @@ set tabline=%!tabline#Tabline()
 
 " plugin config {{{
 
-" fzf {{{
-set rtp+=~/bin/fzf
-" don't use annoying popup
-let g:fzf_layout = { 'down': '~40%' }
-" " }}}
-
 " ctrlp {{{
 let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_extensions = ['mixed', 'buffertag', 'tag', 'line', 'changes', 'undo', 'quickfix']
@@ -214,6 +209,14 @@ nnoremap \pq :CtrlPQuickfix<CR>
 nnoremap \pp :CtrlPMixed<CR>
 nnoremap \pl :CtrlPLine<CR>
 "}}}
+
+" easy-align {{{
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap gl <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap gl <Plug>(EasyAlign)
+" }}}
 
 " tagbar {{{
 let g:tagbar_autofocus = 1
@@ -249,6 +252,11 @@ nnoremap _G :Glcd<CR>
 " }}}
 
 " mappings {{{
+
+nnoremap j gj
+nnoremap k gk
+nnoremap gj j
+nnoremap gk k
 
 " allow c-j/c-k for cycling through insert mode completions
 inoremap <C-j> <C-n>
@@ -346,10 +354,28 @@ nnoremap \D :call showdecl#ShowDeclaration(1)<CR>
 " substitute operator
 nmap <silent> \s  m':set operatorfunc=substitute#Substitute<CR>g@
 
+" grepping {{{
 " FGrep <pattern> -> quickfix
 command! -nargs=1 FGrep cgetexpr system(&grepprg . ' ' . <q-args> . ' ' . expand('%')) | copen
 nnoremap <Space> :FGrep<Space>
 nnoremap <C-s> :FGrep<Space>
+
+" Grep <pattern> -> quickfix
+command! -nargs=1 Grep cgetexpr system(&grepprg . ' ' . <q-args>) | copen
+
+" view all todo in quickfix window
+nnoremap <silent> \vt :exec("lvimgrep /todo/j %")<cr>:exec("lopen")<CR>
+
+" gitgrep
+command! -nargs=+ GitGrep call gitgrep#GitGrep(<f-args>)
+nnoremap gsg :GitGrep<Space>
+
+" gitgrep for word under cursor in current file and open in location list
+nnoremap <silent> gr :execute("FGrep " . expand("<cword>"))<CR>
+
+" gitgrep for word under cursor in current directory open in quickfix
+nnoremap <silent> gR :exec("GitGrep " . expand("<cword>"))<CR>
+" }}}
 
 " cdo/cfdo if not available
 " from: https://www.reddit.com/r/vim/comments/iiatq6/is_there_a_good_way_to_do_vim_global_find_and/
@@ -477,19 +503,6 @@ nnoremap gsd [<C-d>
 
 " quick make to location list
 nnoremap <F5> :lmake %<CR>
-
-" view all todo in quickfix window
-nnoremap <silent> \vt :exec("lvimgrep /todo/j %")<cr>:exec("lopen")<CR>
-
-" gitgrep
-command! -nargs=+ GitGrep call gitgrep#GitGrep(<f-args>)
-nnoremap gsg :GitGrep<Space>
-
-" gitgrep for word under cursor in current file and open in location list
-nnoremap <silent> gr :exec("GitGrep ".expand("<cword>"). " %")<CR>
-
-" gitgrep for word under cursor in current directory open in quickfix
-nnoremap <silent> gR :exec("GitGrep ".expand("<cword>"))<CR>
 
 " Do and insert results of math equations via python
 " from https://github.com/alerque/que-vim/blob/master/.config/nvim/init.vim
