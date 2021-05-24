@@ -28,3 +28,6 @@
 [submodule "pack/bundle/start/fzf"]
 	path = pack/bundle/start/fzf
 	url = https://github.com/junegunn/fzf.git
+[submodule "pack/bundle/start/vim-rails"]
+	path = pack/bundle/start/vim-rails
+	url = https://github.com/tpope/vim-rails.git
