@@ -235,8 +235,8 @@ map T <Plug>Sneak_T
 
 " undotree {{{
 let g:undotree_WindowLayout = 2
-nnoremap _U :exec("UndotreeToggle")<CR>
-nnoremap \u :exec("UndotreeFocus")<CR>
+nnoremap _U :exec('UndotreeToggle <bar> UndotreeFocus')<CR>
+nnoremap \u :exec('UndotreeFocus')<CR>
 
 function! g:Undotree_CustomMap()
     nmap <buffer> K <plug>UndotreeNextState
@@ -364,17 +364,17 @@ nnoremap <C-s> :FGrep<Space>
 command! -nargs=1 Grep cgetexpr system(&grepprg . ' ' . <q-args>) | copen
 
 " view all todo in quickfix window
-nnoremap <silent> \vt :exec("lvimgrep /todo/j %")<cr>:exec("lopen")<CR>
+nnoremap <silent> \vt :exec('lvimgrep /todo/j %')<cr>:exec('lopen')<CR>
 
 " gitgrep
 command! -nargs=+ GitGrep call gitgrep#GitGrep(<f-args>)
 nnoremap gsg :GitGrep<Space>
 
 " gitgrep for word under cursor in current file and open in location list
-nnoremap <silent> gr :execute("FGrep " . expand("<cword>"))<CR>
+nnoremap <silent> gr :execute('FGrep ' . expand('<cword>'))<CR>
 
 " gitgrep for word under cursor in current directory open in quickfix
-nnoremap <silent> gR :exec("GitGrep " . expand("<cword>"))<CR>
+nnoremap <silent> gR :exec('GitGrep ' . expand(.<cword>.))<CR>
 " }}}
 
 " cdo/cfdo if not available
@@ -392,8 +392,8 @@ if !exists(':cdo')
 endif
 
 " better scrolling
-noremap <expr> <C-b> max([winheight(0) - 2, 1]) . "\<C-u>" . (line('.') < 1         + winheight(0) ? 'H' : 'L')
-noremap <expr> <C-f> max([winheight(0) - 2, 1]) . "\<C-d>" . (line('.') > line('$') - winheight(0) ? 'L' : 'H')
+noremap <expr> <C-b> max([winheight(0) - 2, 1]) . '\<C-u>' . (line('.') < 1         + winheight(0) ? 'H' : 'L')
+noremap <expr> <C-f> max([winheight(0) - 2, 1]) . '\<C-d>' . (line('.') > line('$') - winheight(0) ? 'L' : 'H')
 
 " redir
 command! -nargs=1 -complete=command -bar -range Redir silent call redir#Redir(<q-args>, <range>, <line1>, <line2>)
@@ -413,17 +413,17 @@ nnoremap _t :<C-u>set filetype?<CR>
 nnoremap _T :<C-u>doautocmd filetypedetect BufRead<CR>
 
 " echo current file full path
-nnoremap _f :echo expand("%:p")<cr>
+nnoremap _f :echo expand('%:p')<cr>
 
 " git and diff shortcuts
 nnoremap _gg :echo system('git branch && git status')<CR>
-nnoremap _gd :echo system('git diff ' . expand("%"))<CR>
+nnoremap _gd :echo system('git diff ' . expand('%'))<CR>
 nnoremap _gD :!clear && git diff %<CR>
 nnoremap _gb :GitBranch<CR>
 nnoremap _dh :Diff HEAD<CR>
 nnoremap _dd :Diff<CR>
 nnoremap _do :diffoff<CR>
-nnoremap <expr> \<space> ":\<C-u>".(&diff?"diffoff":"diffthis")."\<CR>"
+nnoremap <expr> \<space> ":\<C-u>".(&diff ? 'diffoff' : 'diffthis') . "\<CR>"
 
 " quick shell command
 nnoremap _! :!<Space>
@@ -454,7 +454,7 @@ nnoremap _v :<C-u>let g: v:<CR>
 nnoremap _V :<C-u>let b: t: w:<CR>
 
 " echo current highlight
-nnoremap _h :echo synIDattr(synID(line("."), col("."), 1), "name")<CR>
+nnoremap _h :echo synIDattr(synID(line('.'), col('.'), 1), 'name')<CR>
 
 " toggle line and column markers
 nnoremap <F3> :set cursorline! cursorcolumn!<CR>
@@ -471,30 +471,30 @@ nnoremap \` :<C-U>Scratch<CR>
 nnoremap \a /[^\x00-\x7F]<CR>
 
 " poor man's c_CTRL-G/c_CTRL-T.. use c-j/c-k to move thru search res as typing
-cnoremap <expr> <C-g> getcmdtype() =~ '[\/?]' ? "<CR>/<C-r>/" : "<C-g>"
-cnoremap <expr> <C-t> getcmdtype() =~ '[\/?]' ? "<CR>?<C-r>/" : "<C-t>"
+cnoremap <expr> <C-g> getcmdtype() =~ '[\/?]' ? '<CR>/<C-r>/' : '<C-g>'
+cnoremap <expr> <C-t> getcmdtype() =~ '[\/?]' ? '<CR>?<C-r>/' : '<C-t>'
 
 " list and be ready to jump to cword
-nnoremap <F4> [I:let nr = input("Goto: ")<Bar>exe "normal " . nr ."[\t"<CR>
+nnoremap <F4> [I:let nr = input('Goto: ')<Bar>exe 'normal ' . nr . '[\t'<CR>
 
 " ilist
 nnoremap \i :Ilist!<Space>
-nnoremap \I :Ilist! <C-r>=expand("<cword>")<CR><CR>
+nnoremap \I :Ilist! <C-r>=expand('<cword>')<CR><CR>
 
 " ijump
-nnoremap gsj :ijump! <C-r>=expand("<cword>")<CR><CR>
+nnoremap gsj :ijump! <C-r>=expand('<cword>')<CR><CR>
 
 " quick jump to tag under curosr
-nnoremap gst :tjump /<C-r>=expand("<cword>")<CR><CR>
+nnoremap gst :tjump /<C-r>=expand('<cword>')<CR><CR>
 
 " g search
 nnoremap \gw :g//#<Left><Left>
-nnoremap \gW :g/<C-r>=expand("<cword>")<CR>/#<CR>
+nnoremap \gW :g/<C-r>=expand('<cword>')<CR>/#<CR>
 
 " quick search and replace
 " https://github.com/romainl/minivimrc/blob/master/vimrc
-nnoremap \rp :'{,'}s/\<<C-r>=expand("<cword>")<CR>\>/
-nnoremap \ra :%s/\<<C-r>=expand("<cword>")<CR>\>//c<Left><Left>
+nnoremap \rp :'{,'}s/\<<C-r>=expand('<cword>')<CR>\>/
+nnoremap \ra :%s/\<<C-r>=expand('<cword>')<CR>\>//c<Left><Left>
 
 " :help include-search shortcuts
 nnoremap gsp :<C-u>psearch <C-r><C-w><CR>
@@ -532,7 +532,7 @@ if has('terminal')
 endif
 
 nnoremap \ev :vsplit $MYVIMRC<cr>
-nnoremap \es :source $MYVIMRC<cr> :echo "sourced"$MYVIMRC""<cr>
+nnoremap \es :source $MYVIMRC<cr> :echo 'sourced ' . $MYVIMRC<cr>
 " }}}
 
 " Source any .vim files from ~/.vim/config {{{
