@@ -11,11 +11,12 @@ endif
 " open quickfix with list of functions
 nnoremap <buffer> <silent> \f call PythonFuncGrep()
 
-if exists("g:py_formatprg")
-    let &l:formatexpr=g:py_formatprg
-else
-    let &l:formatexpr='yapf'
-endif
+function! python#Format() abort
+    let fp = exists("g:py_formatprg") ? g:py_formatprg : 'yapf'
+    let lst = v:lnum + v:count - 1
+    silent execute v:lnum . ',' . lst . '!' . fp
+endfunction
+setlocal formatexpr=python#Format()
 
 if exists("g:py_makeprg")
     " e.g. let g:py_makeprg='pycodestyle\ --ignore=E501\ --format=pylint'
@@ -41,4 +42,4 @@ function! InsertPdOptionContext()
 endfunction
 
 " undo changes
-let b:undo_ftplugin = "setlocal sw< sts< ts< fdm< fen< ofu< sua< inc< mp< efm< def<"
+let b:undo_ftplugin = "setlocal sw< sts< ts< fdm< fen< ofu< sua< inc< mp< efm< def< fex<"
