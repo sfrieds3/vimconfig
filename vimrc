@@ -526,7 +526,7 @@ nnoremap <C-l> :nohlsearch<cr>
 " last changed text as an object
 onoremap \_ :<C-U>execute 'normal! `[v`]'<CR>
 
-if has('terminal')
+if has('terminal') || has('nvim')
     " easy terminal exit
     tnoremap <esc> <C-\><C-n>
 endif
