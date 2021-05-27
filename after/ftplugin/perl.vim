@@ -5,11 +5,12 @@ setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
 
 setlocal foldmethod=indent nofoldenable
 
-if exists("g:pl_formatprg")
-    let &l:formatexpr=expand(g:pl_formatprg)
-else
-    let &l:formatexpr='perltidy\ -st'
-endif
+function! perl#Format() abort
+    let fp = exists("g:pl_formatprg") ? g:pl_formatprg : 'perltidy\ -st'
+    let lst = v:lnum + v:count - 1
+    silent execute v:lnum . ',' . lst . '!' . fp
+endfunction
+setlocal formatexpr=perl#Format()
 
 if exists("g:pl_makeprg")
     " e.g. let g:pl_makeprg='perl\c -c'
@@ -24,4 +25,4 @@ endif
 "let g:perl_no_extended_vars = 0
 
 " undo changes
-let b:undo_ftplugin = "setlocal sw< sts< ts< fdm< fen< isk< mp< et<"
+let b:undo_ftplugin = "setlocal sw< sts< ts< fdm< fen< isk< mp< et< fex<"
