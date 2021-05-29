@@ -221,6 +221,7 @@ nnoremap \pt :BTags<CR>
 nnoremap \pT :Tags<CR>
 nnoremap \pl :Lines<CR>
 nnoremap \pm :Marks<CR>
+nnoremap \<Space> :Rg<CR>
 " }}}
 
 " easy-align {{{
@@ -436,7 +437,7 @@ nnoremap _gb :GitBranch<CR>
 nnoremap _dh :Diff HEAD<CR>
 nnoremap _dd :Diff<CR>
 nnoremap _do :diffoff<CR>
-nnoremap <expr> \<space> ":\<C-u>".(&diff ? 'diffoff' : 'diffthis') . "\<CR>"
+nnoremap <expr> _<space> ":\<C-u>".(&diff ? 'diffoff' : 'diffthis') . "\<CR>"
 
 " quick shell command
 nnoremap _! :!<Space>
