@@ -4,6 +4,10 @@
 if filereadable(glob('$HOME/.vim/autoload/pathogen.vim'))" && v:version < 800
     execute pathogen#infect('pack/bundle/start/{}')
     execute pathogen#infect('pack/bundle/opt/{}')
+    execute pathogen#infect('colors/{}')
+    if has('nvim')
+        execute pathogen#infect('~/.config/nvim/colors/{}')
+    endif
     execute pathogen#helptags()
 endif
 
@@ -149,6 +153,16 @@ if !isdirectory(expand(&backupdir))
     call mkdir(expand(&backupdir), "p")
 endif
 
+" }}}
+
+" nvim settings {{{
+if has('nvim')
+    augroup Neovim
+        autocmd!
+        autocmd TextYankPost * silent! lua vim.highlight.on_yank()
+    augroup END
+    set termguicolors
+endif
 " }}}
 
 " statusline {{{
