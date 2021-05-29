@@ -79,7 +79,7 @@ augroup END
 
 " allow moving beyond buffer text in visual block
 if exists('+virtualedit')
-  set virtualedit+=block
+    set virtualedit+=block
 endif
 
 " timeout on key codes but not on mappings
@@ -127,7 +127,7 @@ endif
 
 " no ruler by default
 if !&ruler
-  set ruler
+    set ruler
 endif
 
 " }}}
@@ -168,7 +168,7 @@ endif
 " statusline {{{
 " statusline only if more than one buffer
 if &laststatus != 2
-  set laststatus=2
+    set laststatus=2
 endif
 
 " toggle statusline
@@ -178,7 +178,7 @@ nnoremap _S :<C-u>:call statusline#ToggleStatusline()<CR>
 " toggle ruler
 nnoremap _N :<C-u>set ruler! ruler?<CR>
 if exists(':xnoremap')
-  xnoremap _N :<C-u>set ruler! ruler?<CR>gv
+    xnoremap _N :<C-u>set ruler! ruler?<CR>gv
 endif
 
 " format the statusline
@@ -337,8 +337,8 @@ nmap \} <Plug>(VerticalRegionDown)
 omap \{ <Plug>(VerticalRegionUp)
 omap \} <Plug>(VerticalRegionDown)
 if exists(':xmap')
-  xmap \{ <Plug>(VerticalRegionUp)
-  xmap \} <Plug>(VerticalRegionDown)
+    xmap \{ <Plug>(VerticalRegionUp)
+    xmap \} <Plug>(VerticalRegionDown)
 endif
 
 " adjust indent of last edit
@@ -366,7 +366,7 @@ nnoremap \w :call whitespace#StripTrailingWhitespace()<CR>
 " toggle list
 nnoremap _L :<C-U>setlocal list! list?<CR>
 if exists(':xnoremap')
-  xnoremap _L :<C-U>setlocal list! list?<CR>gv
+    xnoremap _L :<C-U>setlocal list! list?<CR>gv
 endif
 
 " line number management
@@ -468,7 +468,7 @@ nnoremap \/ q/
 " toggle showing tab, end-of-line, and trailing whitespace
 nnoremap _l :<C-u>setlocal list! list?<CR>
 if exists(':xnoremap')
-  xnoremap _l :<C-u>setlocal list! list?<CR>gv
+    xnoremap _l :<C-u>setlocal list! list?<CR>gv
 endif
 
 " normal maps
