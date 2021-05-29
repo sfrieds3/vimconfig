@@ -66,7 +66,7 @@ set nrformats-=octal
 set showbreak=...
 
 " listchars
-set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
+set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:␣,trail:·,eol:↲
 set list
 
 " do not show listchars in insert
