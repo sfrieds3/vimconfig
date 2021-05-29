@@ -210,18 +210,31 @@ set tabline=%!tabline#Tabline()
 
 " plugin config {{{
 
+" fzf {{{
+set rtp+=~/bin/fzf
+" don't use annoying popup
+let g:fzf_layout = { 'down': '~40%' }
+nnoremap \pr :History<CR>
+nnoremap \pb :Buffers<CR>
+nnoremap \pt :BTags<CR>
+nnoremap \pT :Tags<CR>
+nnoremap \pp :Files<CR>
+nnoremap \pl :Lines<CR>
+nnoremap \pm :Marks<CR>
+" }}}
+
 " ctrlp {{{
-let g:ctrlp_clear_cache_on_exit = 0
-let g:ctrlp_extensions = ['mixed', 'buffertag', 'tag', 'line', 'changes', 'undo', 'quickfix']
-let g:ctrlp_match_window = 'results:100'
-let g:ctrlp_mruf_relative = 1
-nnoremap \pr :CtrlPMRU<CR>
-nnoremap \pb :CtrlPBuffer<CR>
-nnoremap \pt :CtrlPBufTag<CR>
-nnoremap \pT :CtrlPTag<CR>
-nnoremap \pq :CtrlPQuickfix<CR>
-nnoremap \pp :CtrlPMixed<CR>
-nnoremap \pl :CtrlPLine<CR>
+"let g:ctrlp_clear_cache_on_exit = 0
+"let g:ctrlp_extensions = ['mixed', 'buffertag', 'tag', 'line', 'changes', 'undo', 'quickfix']
+"let g:ctrlp_match_window = 'results:100'
+"let g:ctrlp_mruf_relative = 1
+"nnoremap \pr :CtrlPMRU<CR>
+"nnoremap \pb :CtrlPBuffer<CR>
+"nnoremap \pt :CtrlPBufTag<CR>
+"nnoremap \pT :CtrlPTag<CR>
+"nnoremap \pq :CtrlPQuickfix<CR>
+"nnoremap \pp :CtrlPMixed<CR>
+"nnoremap \pl :CtrlPLine<CR>
 "}}}
 
 " easy-align {{{
