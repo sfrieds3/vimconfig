@@ -1,5 +1,5 @@
-setlocal shiftwidth=4 softtabstop=4 tabstop=4
+setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab foldmethod=marker foldenable
 
 nnoremap <buffer> K :silent execute ':help ' . expand('<cword>')<CR>
 
-setlocal foldmethod=marker
+let b:undo_ftplugin = "setlocal sw< sts< ts< et< fen< fdm<"
