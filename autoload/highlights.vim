@@ -21,4 +21,11 @@ function! highlights#MyHighlights() abort
     if exists('g:colors_name') && g:colors_name ==# 'gooddog'
         "set cursorline
     endif
+    
+    let g:jellybeans_overrides = { 
+                \    'Todo': { 'guifg': '303030', 'guibg': 'f0f000', 
+                \              'ctermfg': 'Black', 'ctermbg': 'Yellow', 
+                \              'attr': 'bold' }, 
+                \   'StatusLine': { 'gui': 'NONE' } 
+                \} 
 endfunction
