@@ -63,6 +63,7 @@ set foldcolumn=0
 set mouse=a
 set formatoptions=qrn1j
 set nrformats-=octal
+set redrawtime=10000
 set showbreak=...
 
 " listchars
