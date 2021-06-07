@@ -18,7 +18,7 @@ augroup CustomizeTheme
     autocmd ColorScheme * call highlights#MyHighlights()
 augroup END
 
-colorscheme apprentice
+colorscheme jellybeans
 
 " }}}
 
@@ -67,7 +67,7 @@ set redrawtime=10000
 set showbreak=...
 
 " listchars
-set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:␣,trail:·,eol:↲
+set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:␣,trail:·
 set list
 
 " do not show listchars in insert
@@ -359,7 +359,7 @@ endif
 
 " line number management
 command! ToggleLineNum call lnum#ToggleLineNum()
-nnoremap _n :call lnum#ToggleLineNum()<cr>
+nnoremap _n :ToggleLineNum<cr>
 
 " show declaration
 " from https://gist.github.com/romainl/a11c6952f012f1dd32c26fad4fa82e43
