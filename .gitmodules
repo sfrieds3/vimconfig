@@ -31,3 +31,6 @@
 [submodule "pack/bundle/start/fzf.vim"]
 	path = pack/bundle/start/fzf.vim
 	url = https://github.com/junegunn/fzf.vim.git
+[submodule "pack/bundle/start/vim-scriptease"]
+	path = pack/bundle/start/vim-scriptease
+	url = https://github.com/tpope/vim-scriptease.git
