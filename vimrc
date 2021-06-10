@@ -92,7 +92,7 @@ let mapleader = "\\"
 let maplocalleader = "_"
 
 " git grep default grepprg
-set grepprg=git\ grep\ -n\ $*
+set grepprg=git\ grep\ -in\ $*
 
 " enable syntax
 if !exists("g:syntax_on")
