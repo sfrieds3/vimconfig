@@ -3,7 +3,7 @@ nnoremap <buffer> k k
 nnoremap <buffer> gj gj
 nnoremap <buffer> gk gk
 nnoremap <buffer> H :colder<CR>
-nnormeap <buffer> L :cnewer<CR>
+nnoremap <buffer> L :cnewer<CR>
 
 " use entire screen width for qf window
 wincmd J

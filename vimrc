@@ -222,7 +222,6 @@ nnoremap \pt :BTags<CR>
 nnoremap \pT :Tags<CR>
 nnoremap \pl :Lines<CR>
 nnoremap \pm :Marks<CR>
-nnoremap \<Space> :Rg<CR>
 " }}}
 
 " easy-align {{{
@@ -237,7 +236,7 @@ nmap gl <Plug>(EasyAlign)
 let g:tagbar_autofocus = 1
 let g:tagbar_autoclose = 1
 let g:show_linenumbers = 1
-nnoremap \f :echo tagbar#currenttag('[%s]', '')<CR>
+nnoremap \t :echo tagbar#currenttag('[%s]', '')<CR>
 nnoremap <silent> \\ :exec("TagbarOpen('j')")<cr>
 " }}}
 
