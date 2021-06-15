@@ -91,8 +91,13 @@ set ttimeoutlen=10
 let mapleader = "\\"
 let maplocalleader = "_"
 
-" git grep default grepprg
-set grepprg=git\ grep\ -in\ $*
+" use rg if available, else fall back to git grep  
+if executable('rg')  
+    set grepprg=rg\ -HS\ --no-heading\ --vimgrep  
+    set errorformat^=%f:%l:%c:%m,%f  
+else  
+    set grepprg=git\ grep\ -in\ $*  
+endif
 
 " enable syntax
 if !exists("g:syntax_on")
