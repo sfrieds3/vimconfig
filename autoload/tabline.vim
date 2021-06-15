@@ -18,7 +18,7 @@ function! tabline#Tabline()
         let s .= '%' . tab . 'T'
         let s .= (tab == tabpagenr() ? '%#TabLineSel#' : '%#TabLine#')
         let s .= ' ' . tab .':'
-        let s .= (bufname != '' ? '['. fnamemodify(bufname, ':.') . ']' : '[No Name]')
+        let s .= (bufname != '' ? '['. fnamemodify(bufname, ':p:h') . ']' : '[No Name]')
 
         if bufmodified
             let s .= '[+] '
