@@ -67,7 +67,7 @@ set redrawtime=10000
 set showbreak=...
 
 " listchars
-set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:␣,trail:•
+set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:␣,trail:·
 set list
 
 " do not show listchars in insert
