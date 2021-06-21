@@ -9,7 +9,7 @@ if has('python')
     setlocal omnifunc=pythoncomplete#Complete
 endif
 " open quickfix with list of functions
-nnoremap <buffer> <silent> \f call PythonFuncGrep()
+nnoremap <buffer> <silent> _F call PythonFuncGrep()
 
 function! python#Format() abort
     let fp = exists("g:py_formatprg") ? g:py_formatprg : 'yapf'
