@@ -107,8 +107,12 @@ endif
 set wildmenu
 set wildignore+=*.pyc
 set wildignorecase
-set wildmode=list:longest,full
 set wildcharm=<C-z>
+if !has('nvim')
+    set wildmode=list:longest,full
+else
+    set wildmode=longest:full
+endif
 
 set tags=./tags;,tags;
 
