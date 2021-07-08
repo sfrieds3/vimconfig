@@ -19,10 +19,12 @@ else
     setlocal makeprg='perl\ -c'
 endif
 
+setlocal errorformat=%f:%l:\ %m
+
 " settings for vim-perl
 "let g:perl_include_pod = 1
 "let g:perl_no_scope_in_variables = 0
 "let g:perl_no_extended_vars = 0
 
 " undo changes
-let b:undo_ftplugin = "setlocal sw< sts< ts< fdm< fen< isk< mp< et< fex<"
+let b:undo_ftplugin = "setlocal sw< sts< ts< fdm< fen< isk< mp< et< fex< efm<"
