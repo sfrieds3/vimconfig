@@ -48,37 +48,37 @@ if get(g:, 'perl_fold', 0)
 endif
 
 " Set this once, globally.
-if !exists("perlpath")
-    if executable("perl")
-      try
-	if &shellxquote != '"'
-	    let perlpath = system('perl -e "print join(q/,/,@INC)"')
-	else
-	    let perlpath = system("perl -e 'print join(q/,/,@INC)'")
-	endif
-	let perlpath = substitute(perlpath,',.$',',,','')
-      catch /E145:/
-	let perlpath = ".,,"
-      endtry
-    else
-	" If we can't call perl to get its path, just default to using the
-	" current directory and the directory of the current file.
-	let perlpath = ".,,"
-    endif
-endif
-
-" Append perlpath to the existing path value, if it is set.  Since we don't
-" use += to do it because of the commas in perlpath, we have to handle the
-" global / local settings, too.
-if &l:path == ""
-    if &g:path == ""
-        let &l:path=perlpath
-    else
-        let &l:path=&g:path.",".perlpath
-    endif
-else
-    let &l:path=&l:path.",".perlpath
-endif
+"if !exists("perlpath")
+"    if executable("perl")
+"      try
+"	if &shellxquote != '"'
+"	    let perlpath = system('perl -e "print join(q/,/,@INC)"')
+"	else
+"	    let perlpath = system("perl -e 'print join(q/,/,@INC)'")
+"	endif
+"	let perlpath = substitute(perlpath,',.$',',,','')
+"      catch /E145:/
+"	let perlpath = ".,,"
+"      endtry
+"    else
+"	" If we can't call perl to get its path, just default to using the
+"	" current directory and the directory of the current file.
+"	let perlpath = ".,,"
+"    endif
+"endif
+"
+"" Append perlpath to the existing path value, if it is set.  Since we don't
+"" use += to do it because of the commas in perlpath, we have to handle the
+"" global / local settings, too.
+"if &l:path == ""
+"    if &g:path == ""
+"        let &l:path=perlpath
+"    else
+"        let &l:path=&g:path.",".perlpath
+"    endif
+"else
+"    let &l:path=&l:path.",".perlpath
+"endif
 "---------------------------------------------
 
 " Undo the stuff we changed.
@@ -92,4 +92,3 @@ let b:match_words = '\<if\>:\<elsif\>:\<else\>'
 " Restore the saved compatibility options.
 let &cpo = s:save_cpo
 unlet s:save_cpo
-
