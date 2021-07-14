@@ -13,10 +13,12 @@ endif
 
 " colorscheme {{{
 
-augroup CustomizeTheme
-    autocmd!
-    autocmd ColorScheme * call highlights#MyHighlights()
-augroup END
+if !has('nvim')
+    augroup CustomizeTheme
+        autocmd!
+        autocmd ColorScheme * call highlights#MyHighlights()
+    augroup END
+endif
 
 colorscheme monokai
 
@@ -234,7 +236,7 @@ let g:tagbar_autofocus = 1
 let g:tagbar_autoclose = 1
 let g:show_linenumbers = 1
 nnoremap \t :echo tagbar#currenttag('[%s]', '')<CR>
-nnoremap <silent> \\ :exec("TagbarOpen('j')")<cr>
+nnoremap \\t :exec("TagbarOpen('j')")<cr>
 " }}}
 
 " sneak {{{
