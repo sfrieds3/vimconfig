@@ -485,7 +485,7 @@ cnoremap <expr> <C-g> getcmdtype() =~ '[\/?]' ? '<CR>/<C-r>/' : '<C-g>'
 cnoremap <expr> <C-t> getcmdtype() =~ '[\/?]' ? '<CR>?<C-r>/' : '<C-t>'
 
 " list and be ready to jump to cword
-nnoremap <F4> [I:let nr = input('Goto: ')<Bar>exe 'normal ' . nr . '[\t'<CR>
+nnoremap <F4> [I:let n = input('> ')<Bar>exe 'normal ' . n . '[\t'<CR>
 
 " ilist
 nnoremap \i :Ilist!<Space>
