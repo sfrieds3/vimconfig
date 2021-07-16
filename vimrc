@@ -1,13 +1,10 @@
 " vim settings {{{
 
 "use pathogen
-if filereadable(glob('$HOME/.vim/autoload/pathogen.vim'))" && v:version < 800
+if filereadable(glob('$HOME/.vim/autoload/pathogen.vim'))
     execute pathogen#infect('pack/bundle/start/{}')
     execute pathogen#infect('pack/bundle/opt/{}')
     execute pathogen#infect('colors/{}')
-    if has('nvim')
-        execute pathogen#infect('~/.config/nvim/colors/{}')
-    endif
     execute pathogen#helptags()
 endif
 
