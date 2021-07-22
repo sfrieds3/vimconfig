@@ -384,7 +384,7 @@ nnoremap gsg :GitGrep<Space>
 nnoremap <silent> gr :execute('FGrep ' . expand('<cword>'))<CR>
 
 " gitgrep for word under cursor in current directory open in quickfix
-nnoremap <silent> gR :exec('GitGrep ' . expand(.<cword>.))<CR>
+nnoremap <silent> gR :exec('GitGrep ' . expand('<cword>'))<CR>
 " }}}
 
 " cdo/cfdo if not available
