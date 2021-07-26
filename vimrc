@@ -265,8 +265,12 @@ nnoremap _G :Glcd<CR>
 
 nnoremap j gj
 nnoremap k gk
+nnoremap ^ g^
+nnoremap $ g$
 nnoremap gj j
 nnoremap gk k
+nnoremap g^ ^
+nnoremap g$ $
 
 " allow c-j/c-k for cycling through insert mode completions
 inoremap <C-j> <C-n>
