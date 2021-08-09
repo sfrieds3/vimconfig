@@ -218,6 +218,21 @@ nnoremap \pt :BTags<CR>
 nnoremap \pT :Tags<CR>
 nnoremap \pl :Lines<CR>
 nnoremap \pm :Marks<CR>
+
+let g:fzf_colors =
+            \ { 'fg':      ['fg', 'Normal'],
+            \ 'bg':      ['bg', 'Normal'],
+            \ 'hl':      ['fg', 'Comment'],
+            \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+            \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+            \ 'hl+':     ['fg', 'Statement'],
+            \ 'info':    ['fg', 'PreProc'],
+            \ 'border':  ['fg', 'Ignore'],
+            \ 'prompt':  ['fg', 'Conditional'],
+            \ 'pointer': ['fg', 'Exception'],
+            \ 'marker':  ['fg', 'Keyword'],
+            \ 'spinner': ['fg', 'Label'],
+            \ 'header':  ['fg', 'Comment'] }
 " }}}
 
 " easy-align {{{
@@ -335,6 +350,9 @@ nnoremap \> :<C-U>'[,']><CR>
 " buffers and ready to switch
 " nnoremap \b :buffers<CR>:b<Space>
 nnoremap \b :B<CR>
+
+" fuzzy find in search path
+nnoremap \ff :find **/*
 
 " redraw screen
 nnoremap \! :redraw!<CR>
