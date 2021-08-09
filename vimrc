@@ -351,8 +351,9 @@ nnoremap \> :<C-U>'[,']><CR>
 " nnoremap \b :buffers<CR>:b<Space>
 nnoremap \b :B<CR>
 
-" fuzzy find in search path
+" fuzzy find in path
 nnoremap \ff :find **/*
+nnoremap \fF :find **/
 
 " redraw screen
 nnoremap \! :redraw!<CR>
