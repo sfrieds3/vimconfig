@@ -352,8 +352,8 @@ nnoremap \> :<C-U>'[,']><CR>
 nnoremap \b :B<CR>
 
 " fuzzy find in path
-nnoremap \ff :find **/*
-nnoremap \fF :find **/
+nnoremap \f :find **/*
+nnoremap \F :find **/
 
 " redraw screen
 nnoremap \! :redraw!<CR>
