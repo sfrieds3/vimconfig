@@ -209,8 +209,7 @@ set tabline=%!tabline#Tabline()
 
 " fzf {{{
 set rtp+=~/bin/fzf
-" don't use annoying popup
-let g:fzf_layout = { 'down': '~40%' }
+
 nnoremap <C-p> :Files<CR>
 nnoremap \pr :History<CR>
 nnoremap \pb :Buffers<CR>
@@ -219,6 +218,8 @@ nnoremap \pT :Tags<CR>
 nnoremap \pl :Lines<CR>
 nnoremap \pm :Marks<CR>
 
+let g:fzf_history_dir = '~/.local/share/fzf-history'
+let g:fzf_layout = { 'down': '~40%' }
 let g:fzf_colors =
             \ { 'fg':      ['fg', 'Normal'],
             \ 'bg':      ['bg', 'Normal'],
