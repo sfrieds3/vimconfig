@@ -34,3 +34,9 @@
 [submodule "pack/bundle/start/vim-markdown"]
 	path = pack/bundle/start/vim-markdown
 	url = https://github.com/tpope/vim-markdown.git
+[submodule "pack/bundle/start/fzf"]
+	path = pack/bundle/start/fzf
+	url = https://github.com/junegunn/fzf.git
+[submodule "pack/bundle/start/fzf.vim"]
+	path = pack/bundle/start/fzf.vim
+	url = https://github.com/junegunn/fzf.vim.git
