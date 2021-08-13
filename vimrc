@@ -396,6 +396,7 @@ nnoremap <C-s> :FGrep<Space>
 
 " Grep <pattern> -> quickfix
 command! -nargs=1 Grep cgetexpr system(&grepprg . ' ' . <q-args>) | copen
+nnoremap gsg :Grep<Space>
 
 " view all todo in quickfix window
 nnoremap <silent> \vt :exec('lvimgrep /todo/j %')<cr>:exec('lopen')<CR>
@@ -408,7 +409,7 @@ nnoremap gsg :GitGrep<Space>
 nnoremap <silent> gr :execute('FGrep ' . expand('<cword>'))<CR>
 
 " gitgrep for word under cursor in current directory open in quickfix
-nnoremap <silent> gR :exec('GitGrep ' . expand('<cword>'))<CR>
+nnoremap <silent> gR :exec('Grep ' . expand('<cword>'))<CR>
 " }}}
 
 " cdo/cfdo if not available
