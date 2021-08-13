@@ -31,3 +31,6 @@
 [submodule "pack/bundle/start/linediff.vim"]
 	path = pack/bundle/start/linediff.vim
 	url = https://github.com/AndrewRadev/linediff.vim.git
+[submodule "pack/bundle/start/vim-markdown"]
+	path = pack/bundle/start/vim-markdown
+	url = https://github.com/tpope/vim-markdown.git
