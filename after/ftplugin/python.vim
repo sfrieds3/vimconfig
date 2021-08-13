@@ -25,6 +25,7 @@ else
     setlocal makeprg='autopep8\ --ignore=E501,E261,E262,E265,E266\ --format=pylint'
 endif
 
+setlocal keywordprg=pydoc3
 setlocal suffixesadd=.py
 setlocal include="from\|import"
 setlocal define="^\s*#\s*(def|class)\s+"
@@ -42,4 +43,4 @@ function! InsertPdOptionContext()
 endfunction
 
 " undo changes
-let b:undo_ftplugin = "setlocal sw< sts< ts< fdm< fen< ofu< sua< inc< mp< efm< def< fex<"
+let b:undo_ftplugin = "setlocal sw< sts< ts< fdm< fen< ofu< sua< inc< mp< efm< def< fex< kp<"
