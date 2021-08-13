@@ -392,7 +392,6 @@ nmap <silent> \s  m':set operatorfunc=substitute#Substitute<CR>g@
 " FGrep <pattern> -> quickfix
 command! -nargs=1 FGrep cgetexpr system(&grepprg . ' ' . <q-args> . ' ' . expand('%')) | copen
 nnoremap <Space> :FGrep<Space>
-nnoremap <C-s> :FGrep<Space>
 
 " Grep <pattern> -> quickfix
 command! -nargs=1 Grep cgetexpr system(&grepprg . ' ' . <q-args>) | copen
@@ -400,10 +399,6 @@ nnoremap gsg :Grep<Space>
 
 " view all todo in quickfix window
 nnoremap <silent> \vt :exec('lvimgrep /todo/j %')<cr>:exec('lopen')<CR>
-
-" gitgrep
-command! -nargs=+ GitGrep call gitgrep#GitGrep(<f-args>)
-nnoremap gsg :GitGrep<Space>
 
 " gitgrep for word under cursor in current file and open in location list
 nnoremap <silent> gr :execute('FGrep ' . expand('<cword>'))<CR>
