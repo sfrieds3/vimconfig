@@ -28,3 +28,6 @@
 [submodule "pack/bundle/start/vim-scriptease"]
 	path = pack/bundle/start/vim-scriptease
 	url = https://github.com/tpope/vim-scriptease.git
+[submodule "pack/bundle/start/linediff.vim"]
+	path = pack/bundle/start/linediff.vim
+	url = https://github.com/AndrewRadev/linediff.vim.git
