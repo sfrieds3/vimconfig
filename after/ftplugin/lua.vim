@@ -1,3 +1,3 @@
-setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab foldenable foldmethod=marker
+setlocal shiftwidth=2 softtabstop=2 expandtab foldenable foldmethod=marker
 
-let b:undo_ftplugin = "setlocal sw< sts< ts< et< fen< fdm<"
+let b:undo_ftplugin = "setlocal sw< sts< et< fen< fdm<"
