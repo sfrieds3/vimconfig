@@ -41,7 +41,7 @@ set hlsearch
 " indentation
 set shiftwidth=4
 let softtabstop = &shiftwidth
-set tabstop=4
+set tabstop=8
 set scrolloff=0
 set shiftround
 set expandtab
