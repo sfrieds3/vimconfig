@@ -1,7 +1,7 @@
 " do not include ':' as part of word
 setlocal iskeyword-=:
 
-setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
+setlocal shiftwidth=4 softtabstop=4 expandtab
 
 setlocal foldmethod=indent nofoldenable
 
@@ -27,4 +27,4 @@ setlocal errorformat=%f:%l:\ %m
 "let g:perl_no_extended_vars = 0
 
 " undo changes
-let b:undo_ftplugin = "setlocal sw< sts< ts< fdm< fen< isk< mp< et< fex< efm<"
+let b:undo_ftplugin = "setlocal sw< sts< fdm< fen< isk< mp< et< fex< efm<"
