@@ -33,7 +33,7 @@ setlocal define="^\s*#\s*(def|class)\s+"
 " pylint
 "let &b:errorformat=%A%f:%l:\ %m,%C,%Z%m
 " pep8/pycodestyle
-setlocal errorformat=%f:%l:\ [E%n]\ %m
+setlocal errorformat=%f:%l:\ [%t%n]\ %m
 
 let g:python_highlight_space_errors = 0
 
