@@ -17,7 +17,7 @@ if !has('nvim')
     augroup END
 endif
 
-colorscheme monokai
+colorscheme sitrunna
 
 " }}}
 

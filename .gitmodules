@@ -40,3 +40,6 @@
 [submodule "pack/bundle/start/fzf.vim"]
 	path = pack/bundle/start/fzf.vim
 	url = https://github.com/junegunn/fzf.vim.git
+[submodule "colors/sonokai"]
+	path = colors/sonokai
+	url = https://github.com/sainnhe/sonokai.git
