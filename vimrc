@@ -404,6 +404,7 @@ nnoremap gsg :Grep<Space>
 
 " view all todo in quickfix window
 nnoremap <silent> \vt :exec('lvimgrep /todo/j %')<cr>:exec('lopen')<CR>
+nnoremap <silent> \vT :exec('Rg todo')<CR>
 
 " gitgrep for word under cursor in current file and open in location list
 nnoremap <silent> gr :execute('FGrep ' . expand('<cword>'))<CR>
