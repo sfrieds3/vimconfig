@@ -3,7 +3,7 @@ if exists('g:loaded_whitespace')
 endif
 let g:loaded_whitespace = 1
 
-function! whitespace#StripTrailingWhitespace() range
+function! whitespace#StripTrailingWhitespace()
     if !&binary && &filetype != 'diff'
         execute "redir => numclean"
         silent! execute "%s/\\s\\+$//en"
