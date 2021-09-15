@@ -24,8 +24,6 @@ function! whitespace#StripTrailingWhitespaceVisual() range
         execute "redir => numclean"
         silent! execute s:args . "n"
         execute "redir END"
-        echom("firstline: " . a:firstline)
-        echom("lastline: " . a:lastline)
         silent! call preserve#Preserve(s:args)
         if strlen(numclean) >0
             execute 'echo substitute(numclean, "\n", "", "g")'
