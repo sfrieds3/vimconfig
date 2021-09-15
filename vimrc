@@ -373,7 +373,10 @@ nnoremap _5 :call hiwords#HiInterestingWord(5)<cr>
 nnoremap _6 :call hiwords#HiInterestingWord(6)<cr>
 
 " trim trailing whitespace
-nnoremap \w :call whitespace#StripTrailingWhitespace()<CR>
+command! StripTrailingWhitespace call whitespace#StripTrailingWhitespace()
+command! -range=% StripTrailingWhitespaceVisual '<,'> call whitespace#StripTrailingWhitespaceVisual()
+nnoremap \w :StripTrailingWhitespace<CR>
+xnoremap \w :StripTrailingWhitespaceVisual<CR>
 
 " toggle list
 nnoremap _L :<C-U>setlocal list! list?<CR>
