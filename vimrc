@@ -400,14 +400,16 @@ nmap <silent> \s  m':set operatorfunc=substitute#Substitute<CR>g@
 function! Grep(...)
     return system(join([&grepprg] + [expandcmd(join(a:000, ' '))], ' '))
 endfunction
-" FGrep <pattern> -> quickfix
-"command! -nargs=1 FGrep cgetexpr system(&grepprg . ' ' . <q-args> . ' ' . expand('%')) | copen
+
 command! -nargs=+ -complete=file_in_path -bar Grep cgetexpr Grep(<f-args>)
 command! -nargs=+ -complete=file_in_path -bar FGrep lgetexpr Grep(<f-args>)
+
+" FGrep <pattern> -> quickfix
+"command! -nargs=1 FGrep cgetexpr system(&grepprg . ' ' . <q-args> . ' ' . expand('%')) | copen
 nnoremap <Space> :FGrep<Space>
 
 " Grep <pattern> -> quickfix
-command! -nargs=1 Grep cgetexpr system(&grepprg . ' ' . <q-args>) | copen
+"command! -nargs=1 Grep cgetexpr system(&grepprg . ' ' . <q-args>) | copen
 nnoremap gsg :Grep<Space>
 
 " view all todo in quickfix window
