@@ -17,7 +17,7 @@ if !has('nvim')
     augroup END
 endif
 
-colorscheme sitrunna
+colorscheme moonfly
 
 " }}}
 
@@ -92,7 +92,7 @@ let maplocalleader = "_"
 
 " use rg if available, else fall back to git grep  
 if executable('rg')  
-    set grepprg=rg\ -HS\ --no-heading\ --vimgrep  
+    set grepprg=rg\ -HS\ --no-heading\ --vimgrep\ $*
     set errorformat^=%f:%l:%c:%m,%f  
 else  
     set grepprg=git\ grep\ -in\ $*  
@@ -397,8 +397,13 @@ nnoremap \D :call showdecl#ShowDeclaration(1)<CR>
 nmap <silent> \s  m':set operatorfunc=substitute#Substitute<CR>g@
 
 " grepping {{{
+function! Grep(...)
+    return system(join([&grepprg] + [expandcmd(join(a:000, ' '))], ' '))
+endfunction
 " FGrep <pattern> -> quickfix
-command! -nargs=1 FGrep cgetexpr system(&grepprg . ' ' . <q-args> . ' ' . expand('%')) | copen
+"command! -nargs=1 FGrep cgetexpr system(&grepprg . ' ' . <q-args> . ' ' . expand('%')) | copen
+command! -nargs=+ -complete=file_in_path -bar Grep cgetexpr Grep(<f-args>)
+command! -nargs=+ -complete=file_in_path -bar FGrep lgetexpr Grep(<f-args>)
 nnoremap <Space> :FGrep<Space>
 
 " Grep <pattern> -> quickfix
