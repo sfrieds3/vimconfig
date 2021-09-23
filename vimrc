@@ -185,6 +185,7 @@ set statusline+=%<
 set statusline+=%{statusline#StatusLineFileName()}
 set statusline+=%m
 set statusline+=%{statusline#StatusLineFiletype()}
+set statusline+=\ %{fugitive#statusline()}
 
 " right section
 set statusline+=%=
