@@ -186,6 +186,7 @@ set statusline+=%{statusline#StatusLineFileName()}
 set statusline+=%m
 set statusline+=%{statusline#StatusLineFiletype()}
 set statusline+=\ %{fugitive#statusline()}
+set statusline+=\ %{gutentags#statusline()}
 
 " right section
 set statusline+=%=
@@ -279,6 +280,13 @@ nnoremap _G :Glcd<CR>
 " markdown {{{
 let g:markdown_fenced_languages = ['python', 'perl', 'c', 'cpp', 'ruby', 'bash', 'sh', 'sql', 'html']
 let g:markdown_folding = 1
+" }}}
+
+" gutentags {{{
+let g:gutentags_cache_dir = '~/.vim/tmp/gutentags/'
+if !isdirectory(expand(g:gutentags_cache_dir))
+    call mkdir(expand(g:gutentags_cache_dir), "p")
+endif
 " }}}
 
 " }}}

@@ -46,3 +46,6 @@
 [submodule "pack/bundle/start/sonokai"]
 	path = pack/bundle/start/sonokai
 	url = https://github.com/sainnhe/sonokai.git
+[submodule "pack/bundle/start/vim-gutentags"]
+	path = pack/bundle/start/vim-gutentags
+	url = https://github.com/ludovicchabant/vim-gutentags.git
