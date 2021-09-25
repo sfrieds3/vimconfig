@@ -17,7 +17,8 @@ if !has('nvim')
     augroup END
 endif
 
-colorscheme moonfly
+let g:seoul256_background=233
+colorscheme seoul256
 
 " }}}
 

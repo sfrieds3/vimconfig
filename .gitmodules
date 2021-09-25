@@ -49,3 +49,6 @@
 [submodule "pack/bundle/start/vim-gutentags"]
 	path = pack/bundle/start/vim-gutentags
 	url = https://github.com/ludovicchabant/vim-gutentags.git
+[submodule "pack/bundle/start/seoul256.vim"]
+	path = pack/bundle/start/seoul256.vim
+	url = https://github.com/junegunn/seoul256.vim.git
