@@ -1,4 +1,4 @@
-setlocal suffixesadd=.h
+setlocal suffixesadd=.h,.hpp
 
 setlocal shiftwidth=4 softtabstop=4
 setlocal foldmethod=syntax
@@ -10,4 +10,4 @@ nnoremap <buffer> \<Space>j :FSSplitBelow<CR>
 nnoremap <buffer> \<Space>k :FSSplitAbove<CR>
 nnoremap <buffer> \<Space>l :FSSplitRight<CR>
 
-let b:undo_ftplugin = "setlocal sw< sts< fm< fen< sua<"
+let b:undo_ftplugin = "setlocal sw< sts< fdm< fen< sua<"

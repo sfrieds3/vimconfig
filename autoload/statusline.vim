@@ -29,3 +29,7 @@ endfunction
 function! statusline#StatusLineFormat()
     return winwidth(0) > 160 ? printf("%s | %s", &ff, &fenc) : ''
 endfunction
+
+function! statusline#TrailingWhitespace()
+    return len(filter(getline(1, '$'), 'v:val =~ "\\s$"')) > 0 ? "[TRAIL]" : ""
+endfunction

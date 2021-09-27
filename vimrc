@@ -10,12 +10,10 @@ endif
 
 " colorscheme {{{
 
-if !has('nvim')
-    augroup CustomizeTheme
-        autocmd!
-        autocmd ColorScheme * call highlights#MyHighlights()
-    augroup END
-endif
+augroup CustomizeTheme
+    autocmd!
+    autocmd ColorScheme * call highlights#MyHighlights()
+augroup END
 
 let g:seoul256_background=233
 colorscheme seoul256
@@ -91,12 +89,12 @@ set ttimeoutlen=10
 let mapleader = "\\"
 let maplocalleader = "_"
 
-" use rg if available, else fall back to git grep  
-if executable('rg')  
+" use rg if available, else fall back to git grep
+if executable('rg')
     set grepprg=rg\ -HS\ --no-heading\ --vimgrep\ $*
-    set errorformat^=%f:%l:%c:%m,%f  
-else  
-    set grepprg=git\ grep\ -in\ $*  
+    set errorformat^=%f:%l:%c:%m,%f
+else
+    set grepprg=git\ grep\ -in\ $*
 endif
 
 " enable syntax
@@ -200,6 +198,7 @@ set statusline+=\ [%l/%L
 set statusline+=:%c
 " % of file
 set statusline+=\ %p%%]
+set statusline+=\ %{statusline#TrailingWhitespace()}
 " }}}
 
 " tabline {{{
@@ -412,10 +411,9 @@ function! Grep(...)
 endfunction
 
 command! -nargs=+ -complete=file_in_path -bar Grep cgetexpr Grep(<f-args>)
-command! -nargs=+ -complete=file_in_path -bar FGrep lgetexpr Grep(<f-args>)
 
 " FGrep <pattern> -> quickfix
-"command! -nargs=1 FGrep cgetexpr system(&grepprg . ' ' . <q-args> . ' ' . expand('%')) | copen
+command! -nargs=1 FGrep lgetexpr system(&grepprg . ' ' . <q-args> . ' ' . expand('%'))
 nnoremap <Space> :FGrep<Space>
 
 " Grep <pattern> -> quickfix

@@ -18,4 +18,4 @@ setlocal shiftwidth=4 softtabstop=4
 setlocal foldmethod=syntax
 setlocal nofoldenable
 
-let b:undo_ftplugin = "setlocal sw< sts< fm< fen sua< mp"
+let b:undo_ftplugin = "setlocal sw< sts< fdm< fen sua< mp"
