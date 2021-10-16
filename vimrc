@@ -250,13 +250,6 @@ nnoremap \t :echo tagbar#currenttag('[%s]', '')<CR>
 nnoremap \\t :exec("TagbarOpen('j')")<cr>
 " }}}
 
-" sneak {{{
-map f <Plug>Sneak_f
-map F <Plug>Sneak_F
-map t <Plug>Sneak_t
-map T <Plug>Sneak_T
-" }}}
-
 " undotree {{{
 let g:undotree_WindowLayout = 2
 nnoremap _U :exec('UndotreeToggle <bar> UndotreeFocus')<CR>
