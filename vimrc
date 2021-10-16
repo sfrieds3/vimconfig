@@ -112,7 +112,6 @@ endif
 
 set tags=./tags;,tags;
 
-" better completion
 set omnifunc=syntaxcomplete#Complete
 set complete+=d
 set completeopt=longest,menuone,preview
@@ -120,18 +119,15 @@ set completeopt=longest,menuone,preview
 " simple default path
 set path=.,,
 
-" use matchit
 runtime! macros/matchit.vim
 
 " easy manpages with <leader>K or :Man <manpage>
 runtime! ftplugin/man.vim
 
-" cfilter
 if has('patch-8.1.0311')
     packadd cfilter
 endif
 
-" no ruler by default
 if !&ruler
     set ruler
 endif
