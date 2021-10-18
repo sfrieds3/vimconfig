@@ -3,7 +3,7 @@ if exists('g:loaded_statusline')
 endif
 let g:loaded_statusline = 1
 
-function! statusline#ToggleStatusline()
+function! statusline#ToggleStatusline() abort
     if &laststatus == 1
         set laststatus=2
     else
@@ -12,24 +12,30 @@ function! statusline#ToggleStatusline()
     set laststatus?
 endfunction
 
-function! statusline#StatusLineBuffNum()
+function! statusline#StatusLineBuffNum() abort
     let bnum = expand(bufnr('%'))
     return printf("[%d]\ ", bnum)
 endfunction
 
-function! statusline#StatusLineFileName()
+function! statusline#StatusLineFileName() abort
     let fname = '' != expand('%:t') ? printf("%s\ ", expand('%:f')) : '[No Name] '
     return printf("%s", fname)
 endfunction
 
-function! statusline#StatusLineFiletype()
+function! statusline#StatusLineFiletype() abort
     return (strlen(&filetype) ? printf("(%s)", &filetype) : '(no ft)')
 endfunction
 
-function! statusline#StatusLineFormat()
+function! statusline#StatusLineFormat() abort
     return winwidth(0) > 160 ? printf("%s | %s", &ff, &fenc) : ''
 endfunction
 
-function! statusline#TrailingWhitespace()
+function! statusline#TrailingWhitespace() abort
     return len(filter(getline(1, '$'), 'v:val =~ "\\s$"')) > 0 ? "[TRAIL]" : ""
 endfunction
+
+function! statusline#StatusLineGitBranch() abort
+    let b = fugitive#statusline()
+    return winwidth(0) > 80 ? printf(" %s", b) : ''
+endfunction
+

@@ -180,13 +180,13 @@ set statusline+=%<
 set statusline+=%{statusline#StatusLineFileName()}
 set statusline+=%m
 set statusline+=%{statusline#StatusLineFiletype()}
-set statusline+=\ %{fugitive#statusline()}
+set statusline+=%{statusline#StatusLineGitBranch()}
 set statusline+=\ %{gutentags#statusline()}
 
 " right section
 set statusline+=%=
 " file format
-set statusline+=\ %{statusline#StatusLineFormat()}
+set statusline+=%{statusline#StatusLineFormat()}
 
 " line number
 set statusline+=\ [%l/%L
@@ -194,7 +194,7 @@ set statusline+=\ [%l/%L
 set statusline+=:%c
 " % of file
 set statusline+=\ %p%%]
-set statusline+=\ %{statusline#TrailingWhitespace()}
+set statusline+=%{statusline#TrailingWhitespace()}
 " }}}
 
 " tabline {{{
