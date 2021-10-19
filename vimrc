@@ -14,9 +14,12 @@ augroup CustomizeTheme
     autocmd!
     autocmd ColorScheme * call highlights#MyHighlights()
 augroup END
-
-let g:seoul256_background=233
-colorscheme seoul256
+try
+    let g:seoul256_background=233
+    colorscheme seoul256
+catch
+    colorscheme ron
+endtry
 
 " }}}
 
@@ -56,13 +59,21 @@ set encoding=utf8
 set fileencoding=utf8
 set showtabline=3
 set clipboard^=unnamed,unnamedplus
-set foldmethod=manual
-set foldcolumn=0
-set mouse=a
 set formatoptions=qrn1j
 set nrformats-=octal
 set redrawtime=50000
 set showbreak=...
+
+if has('mouse')
+    set mouse=a
+endif
+
+if has('foldmethod')
+    set foldmethod=manual
+endif
+if has('foldcolumn')
+    set foldcolumn=0
+endif
 
 " listchars
 set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:␣,trail:·
