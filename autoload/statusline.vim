@@ -18,8 +18,8 @@ function! statusline#StatusLineBuffNum() abort
 endfunction
 
 function! statusline#StatusLineFileName() abort
-    let fname = '' != expand('%:t') ? printf("%s\ ", expand('%:f')) : '[No Name] '
-    return printf("%s", fname)
+    let fname_str = winwidth(0) > 100 ? expand('%') : expand('%:t')'
+    let fname = '' != fname_str ? printf("%s\ ", fname_str) : '[No Name] '
 endfunction
 
 function! statusline#StatusLineFiletype() abort
