@@ -36,6 +36,6 @@ endfunction
 
 function! statusline#StatusLineGitBranch() abort
     let b = fugitive#statusline()
-    return winwidth(0) > 80 ? printf(" %s", b) : ''
+    return winwidth(0) > 80 ? printf("%s", b) : ''
 endfunction
 

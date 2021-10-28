@@ -191,7 +191,7 @@ set statusline+=%<
 set statusline+=%{statusline#StatusLineFileName()}
 set statusline+=%m
 set statusline+=%{statusline#StatusLineFiletype()}
-set statusline+=%{statusline#StatusLineGitBranch()}
+set statusline+=\ %{statusline#StatusLineGitBranch()}
 set statusline+=\ %{gutentags#statusline()}
 
 " right section
