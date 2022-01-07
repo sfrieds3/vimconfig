@@ -58,6 +58,8 @@ hi LineNr         ctermfg=243  ctermbg=234  cterm=NONE   guifg=#767874 guibg=#19
 hi VertSplit      ctermfg=239  ctermbg=239  cterm=NONE   guifg=#434343 guibg=#434343 gui=NONE
 hi StatusLine     ctermfg=188  ctermbg=239  cterm=bold   guifg=#D3D7CF guibg=#434343 gui=bold
 hi StatusLineNC   ctermfg=188  ctermbg=239  cterm=NONE   guifg=#D3D7CF guibg=#434343 gui=NONE
+hi TablineSel     ctermfg=188  ctermbg=239  cterm=bold   guifg=#D3D7CF guibg=#434343 gui=bold
+hi TablineFil     ctermfg=188  ctermbg=239  cterm=NONE   guifg=#D3D7CF guibg=#434343 gui=NONE
 hi Folded         ctermfg=253  ctermbg=240  cterm=bold   guifg=#D3D7CF guibg=#525252 gui=bold
 hi ColorColumn    ctermfg=NONE ctermbg=235  cterm=NONE   guifg=NONE    guibg=#202020 gui=NONE
 
