@@ -8,18 +8,21 @@ if filereadable(glob('$HOME/.vim/autoload/pathogen.vim'))
     execute pathogen#helptags()
 endif
 
+if has('nvim')
+    execute pathogen#infect('pack/nvim/start/{}')
+    execute pathogen#helptags()
+    set updatetime=100
+endif
+
 " colorscheme {{{
 
 augroup CustomizeTheme
     autocmd!
     autocmd ColorScheme * call highlights#MyHighlights()
 augroup END
-try
-    let g:seoul256_background=233
-    colorscheme seoul256
-catch
-    colorscheme ron
-endtry
+
+doautocmd ColorScheme
+colorscheme pastel
 
 " }}}
 
@@ -44,7 +47,7 @@ set hlsearch
 set shiftwidth=4
 let softtabstop = &shiftwidth
 set tabstop=8
-set scrolloff=0
+set scrolloff=3
 set shiftround
 set expandtab
 set smarttab
@@ -85,7 +88,6 @@ augroup ListChar
     autocmd InsertEnter * set nolist
     autocmd InsertLeave * set list
 augroup END
-
 
 " allow moving beyond buffer text in visual block
 if exists('+virtualedit')
@@ -192,7 +194,9 @@ set statusline+=%{statusline#StatusLineFileName()}
 set statusline+=%m
 set statusline+=%{statusline#StatusLineFiletype()}
 set statusline+=\ %{statusline#StatusLineGitBranch()}
-set statusline+=\ %{gutentags#statusline()}
+if has('nvim')
+    set statusline+=\ %{gutentags#statusline()}
+endif
 
 " right section
 set statusline+=%=
@@ -283,9 +287,11 @@ let g:markdown_folding = 1
 " }}}
 
 " gutentags {{{
-let g:gutentags_cache_dir = '~/.vim/tmp/gutentags/'
-if !isdirectory(expand(g:gutentags_cache_dir))
-    call mkdir(expand(g:gutentags_cache_dir), "p")
+if has('nvim')
+    let g:gutentags_cache_dir = '~/.vim/tmp/gutentags/'
+    if !isdirectory(expand(g:gutentags_cache_dir))
+        call mkdir(expand(g:gutentags_cache_dir), "p")
+    endif
 endif
 " }}}
 
