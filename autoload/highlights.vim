@@ -11,6 +11,11 @@ hi def InterestingWord5 guifg=#000000 ctermfg=16 guibg=#ff9eb8 ctermbg=211
 hi def InterestingWord6 guifg=#000000 ctermfg=16 guibg=#ff2c4b ctermbg=195
 
 function! highlights#MyHighlights() abort
+    highlight SignColumn        ctermbg=NONE cterm=NONE guibg=NONE gui=NONE
+    highlight SignifySignAdd    ctermfg=green cterm=NONE
+    highlight SignifySignDelete ctermfg=blue cterm=NONE
+    highlight SignifySignChange ctermfg=green cterm=NONE
+
     if exists('g:colors_name') && g:colors_name ==# 'apprentice'
         highlight Comment ctermfg=242
         highlight Todo cterm=reverse ctermbg=226 ctermfg=235
