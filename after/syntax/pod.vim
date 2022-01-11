@@ -21,9 +21,9 @@
 " Remove any old syntax stuff hanging around (this is suppressed
 " automatically by ":syn include" if necessary).
 " quit when a syntax file was already loaded
-if exists("b:current_syntax")
-  finish
-endif
+"if exists("b:current_syntax")
+"  finish
+"endif
 
 let s:cpo_save = &cpo
 set cpo&vim
