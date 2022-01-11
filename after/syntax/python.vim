@@ -63,6 +63,12 @@ call s:EnableByDefault('g:python_highlight_builtin_funcs')
 
 if s:Enabled('g:python_highlight_func_calls')
     syn match pythonFunctionCall '\%([^[:cntrl:][:space:][:punct:][:digit:]]\|_\)\%([^[:cntrl:][:punct:][:space:]]\|_\)*\ze\%(\s*(\)'
+
+    " highlight function keyword args
+    syn region pythonFCall matchgroup=pythonFName start='[[:alpha:]_]\i*\s*(' end=')' contains=pythonFCall,pythonFCallKeyword
+    syn match pythonFCallKeyword /\i*\ze\s*=[^=]/ contained
+    highlight pythonFCallKeyword ctermfg=yellow
+    highlight pythonFName ctermfg=blue
 endif
 
 "
