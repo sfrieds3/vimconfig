@@ -33,9 +33,9 @@
 " unlet perl_fold_anonymous_subs
 " unlet perl_no_subprototype_error
 
-if exists("b:current_syntax")
-  finish
-endif
+"if exists("b:current_syntax")
+"  finish
+"endif
 
 let s:cpo_save = &cpo
 set cpo&vim
