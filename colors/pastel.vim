@@ -94,7 +94,7 @@ hi Directory      ctermfg=183  ctermbg=NONE cterm=NONE   guifg=#B99EE3 guibg=NON
 hi Float          ctermfg=172  ctermbg=NONE cterm=NONE   guifg=#D48645 guibg=NONE    gui=NONE
 
 hi Error          ctermfg=255  ctermbg=167  cterm=NONE   guibg=NONE    guisp=#FF0000 gui=undercurl
-hi Exception      ctermfg=255  ctermbg=97   cterm=NONE   guifg=#F0F0F0 guibg=#714FA6 gui=NONE
+hi Exception      ctermfg=97   ctermbg=NONE cterm=NONE   guifg=#714FA6 guibg=NONE    gui=NONE
 
 hi Function       ctermfg=72   ctermbg=NONE cterm=NONE   guifg=#6BB88A guibg=NONE    gui=NONE
 
@@ -120,7 +120,7 @@ hi Special        ctermfg=216  ctermbg=NONE cterm=NONE   guifg=#FA9F7B guibg=NON
 hi SpecialChar    ctermfg=183  ctermbg=NONE cterm=NONE   guifg=#B99EE3 guibg=NONE    gui=NONE
 hi Statement      ctermfg=116  ctermbg=NONE cterm=bold   guifg=#8BC7C4 guibg=NONE    gui=bold
 hi StorageClass   ctermfg=204  ctermbg=NONE cterm=NONE   guifg=#F54985 guibg=NONE    gui=NONE
-hi String         ctermfg=186  ctermbg=NONE cterm=NONE   guifg=#C7C283 guibg=NONE    gui=NONE
+hi String         ctermfg=180  ctermbg=NONE cterm=NONE   guifg=#D7AF87 guibg=NONE    gui=NONE
 hi Structure      ctermfg=74   ctermbg=NONE cterm=NONE   guifg=#65A1F0 guibg=NONE    gui=NONE
 hi SpecialComment ctermfg=245  ctermbg=NONE cterm=italic guifg=#7F8182 guibg=NONE    gui=italic
 
