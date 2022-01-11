@@ -23,7 +23,7 @@
 " #D48645 231 -> Constant Float Number
 " #FA9F7B 216 -> Special
 " #EBA7A7 216 -> Pseudo
-" #C7C283 186 -> String
+" #D7AF5F 179 -> String
 " #6BB88A  72 -> Function
 " #8ECC7E 113 -> Identifier Macro
 
@@ -120,7 +120,7 @@ hi Special        ctermfg=216  ctermbg=NONE cterm=NONE   guifg=#FA9F7B guibg=NON
 hi SpecialChar    ctermfg=183  ctermbg=NONE cterm=NONE   guifg=#B99EE3 guibg=NONE    gui=NONE
 hi Statement      ctermfg=116  ctermbg=NONE cterm=bold   guifg=#8BC7C4 guibg=NONE    gui=bold
 hi StorageClass   ctermfg=204  ctermbg=NONE cterm=NONE   guifg=#F54985 guibg=NONE    gui=NONE
-hi String         ctermfg=180  ctermbg=NONE cterm=NONE   guifg=#D7AF87 guibg=NONE    gui=NONE
+hi String         ctermfg=179  ctermbg=NONE cterm=NONE   guifg=#D7AF5F guibg=NONE    gui=NONE
 hi Structure      ctermfg=74   ctermbg=NONE cterm=NONE   guifg=#65A1F0 guibg=NONE    gui=NONE
 hi SpecialComment ctermfg=245  ctermbg=NONE cterm=italic guifg=#7F8182 guibg=NONE    gui=italic
 
