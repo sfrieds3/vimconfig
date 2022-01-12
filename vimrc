@@ -417,6 +417,10 @@ function! Grep(...)
 endfunction
 
 command! -nargs=+ -complete=file_in_path -bar Grep cgetexpr Grep(<f-args>)
+command! -nargs=+ -complete=file_in_path -bar LGrep lgetexpr Grep(<f-args>)
+
+cnoreabbrev <expr> grep (getcmdtype() ==# ':' && getcmdline() ==# 'grep') ? 'Grep' : 'grep'
+cnoreabbrev <expr> lgrep (getcmdtype() ==# ':' && getcmdline() ==# 'grep') ? 'LGrep' : 'lgrep'
 
 " FGrep <pattern> -> quickfix
 command! -nargs=1 FGrep lgetexpr system(&grepprg . ' ' . <q-args> . ' ' . expand('%'))
