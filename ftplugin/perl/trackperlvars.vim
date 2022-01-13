@@ -52,8 +52,8 @@ function! TPV__setup ()
         " Set up autocommands...
         augroup TrackVarBuffer
             autocmd!
-            autocmd CursorMoved  <buffer>  call TPV_track_perl_var()
-            autocmd CursorMovedI <buffer>  call TPV_track_perl_var()
+            autocmd CursorHold  <buffer>  call TPV_track_perl_var()
+            autocmd CursorHoldI <buffer>  call TPV_track_perl_var()
         augroup END
 
         " Remember how * was set up (if it was) and change it...
@@ -65,7 +65,7 @@ function! TPV__setup ()
         xmap <silent> <special> <buffer>         cv  :silent call TPV_rename_perl_var('visual')<CR>gv
 
         " gd --> goto definition...
-        nmap <special> <buffer><silent> gd  :let @/ = TPV_locate_perl_var_decl()<CR>
+        nmap <special> <buffer><silent> gd  :let @/ = TPV_locate_perl_var_decl()<CR>:nohlsearch<CR>
 
         " tt --> toggle tracking...
         nmap <special> <buffer><silent> tt  :let b:track_perl_var_locked = ! b:track_perl_var_locked<CR>:call TPV_track_perl_var()<CR>
