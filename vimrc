@@ -353,6 +353,10 @@ nnoremap [L :lfirst<CR>
 nnoremap ]L :llast<CR>
 nnoremap \l :lclose<CR>
 nnoremap \<BS> :cclose<Bar>lclose<CR>
+nnoremap <UP> :prev<CR>
+nnoremap <DOWN> :next<CR>
+nnoremap <LEFT> :cprev<CR>
+nnoremap <RIGHT> :cnext<CR>
 
 " Leader,{ and Leader,} move to top and bottom of indent region
 nmap \{ <Plug>(VerticalRegionUp)
@@ -559,6 +563,9 @@ nnoremap \gW :g/<C-r>=expand('<cword>')<CR>/#<CR>
 " https://github.com/romainl/minivimrc/blob/master/vimrc
 nnoremap \rp :'{,'}s/\<<C-r>=expand('<cword>')<CR>\>/
 nnoremap \ra :%s/\<<C-r>=expand('<cword>')<CR>\>//c<Left><Left>
+
+" replace last search term
+nnoremap <expr>  _R  ':%s/' . @/ . '//gc<LEFT><LEFT>'
 
 " :help include-search shortcuts
 nnoremap gsp :<C-u>psearch <C-r><C-w><CR>
