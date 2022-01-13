@@ -1,6 +1,4 @@
 .netrwhist
-tmp/*
+tmp/
 **/tags
-config/*
-config/
 !**/.gitkeep
