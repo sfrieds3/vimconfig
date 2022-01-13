@@ -565,7 +565,7 @@ nnoremap \rp :'{,'}s/\<<C-r>=expand('<cword>')<CR>\>/
 nnoremap \ra :%s/\<<C-r>=expand('<cword>')<CR>\>//c<Left><Left>
 
 " replace last search term
-nnoremap <expr>  _R  ':%s/' . @/ . '//gc<LEFT><LEFT>'
+nnoremap <expr>  _R  ':%s/' . @/ . '//gc<Left><Left><Left>'
 
 " :help include-search shortcuts
 nnoremap gsp :<C-u>psearch <C-r><C-w><CR>
