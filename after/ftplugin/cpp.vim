@@ -10,4 +10,11 @@ nnoremap <buffer> \<Space>j :FSSplitBelow<CR>
 nnoremap <buffer> \<Space>k :FSSplitAbove<CR>
 nnoremap <buffer> \<Space>l :FSSplitRight<CR>
 
-let b:undo_ftplugin = "setlocal sw< sts< fdm< fen< sua<"
+function! cpp#Format() abort
+    let fp = exists("g:cpp_formatprg") ? g:cpp_formatprg : 'clang-format'
+    let lst = v:lnum + v:count - 1
+    silent execute v:lnum . ',' . lst . '!' . fp
+endfunction
+setlocal formatexpr=cpp#Format()
+
+let b:undo_ftplugin = "setlocal sw< sts< fdm< fen< sua< fe<"
