@@ -2,16 +2,19 @@
 
 "use pathogen
 if filereadable(glob('$HOME/.vim/autoload/pathogen.vim'))
-    execute pathogen#infect('pack/bundle/start/{}')
-    execute pathogen#infect('pack/bundle/opt/{}')
+    execute pathogen#infect('bundle/vim/{}')
     execute pathogen#infect('colors/{}')
     execute pathogen#helptags()
 endif
 
 if has('nvim')
-    execute pathogen#infect('pack/nvim/start/{}')
+    execute pathogen#infect('bundle/nvim/{}')
     execute pathogen#helptags()
     set updatetime=100
+endif
+
+if v:version >= 800 || has('nvim')
+    execute pathogen#infect('bundle/vim8/{}')
 endif
 
 " colorscheme {{{
@@ -22,7 +25,7 @@ augroup CustomizeTheme
 augroup END
 
 doautocmd ColorScheme
-colorscheme pastel
+colorscheme goodwolf
 
 " }}}
 

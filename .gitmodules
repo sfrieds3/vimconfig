@@ -1,48 +1,54 @@
 [submodule "pack/bundle/start/tagbar"]
-	path = pack/bundle/start/tagbar
+	path = bundle/vim/tagbar
 	url = https://github.com/majutsushi/tagbar.git
 [submodule "pack/bundle/start/targets.vim"]
-	path = pack/bundle/start/targets.vim
+	path = bundle/vim/targets.vim
 	url = https://github.com/wellle/targets.vim.git
 [submodule "pack/bundle/start/undotree"]
-	path = pack/bundle/start/undotree
+	path = bundle/vim/undotree
 	url = https://github.com/mbbill/undotree.git
 [submodule "pack/bundle/start/vim-obsession"]
 	path = pack/bundle/start/vim-obsession
 	url = https://github.com/tpope/vim-obsession.git
 [submodule "pack/bundle/start/vim-qlist"]
-	path = pack/bundle/start/vim-qlist
+	path = bundle/vim/vim-qlist
 	url = https://github.com/romainl/vim-qlist.git
 [submodule "pack/bundle/start/vim-fugitive"]
-	path = pack/bundle/start/vim-fugitive
+	path = bundle/vim/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
 [submodule "pack/bundle/start/vim-rails"]
-	path = pack/bundle/start/vim-rails
+	path = bundle/vim/vim-rails
 	url = https://github.com/tpope/vim-rails.git
 [submodule "pack/bundle/start/vim-easy-align"]
-	path = pack/bundle/start/vim-easy-align
+	path = bundle/vim/vim-easy-align
 	url = https://github.com/junegunn/vim-easy-align.git
 [submodule "pack/bundle/start/vim-scriptease"]
-	path = pack/bundle/start/vim-scriptease
+	path = bundle/vim/vim-scriptease
 	url = https://github.com/tpope/vim-scriptease.git
 [submodule "pack/bundle/start/linediff.vim"]
-	path = pack/bundle/start/linediff.vim
+	path = bundle/vim/linediff.vim
 	url = https://github.com/AndrewRadev/linediff.vim.git
 [submodule "pack/bundle/start/fzf"]
-	path = pack/bundle/start/fzf
+	path = bundle/vim/fzf
 	url = https://github.com/junegunn/fzf.git
 [submodule "pack/bundle/start/fzf.vim"]
-	path = pack/bundle/start/fzf.vim
+	path = bundle/vim/fzf.vim
 	url = https://github.com/junegunn/fzf.vim.git
 [submodule "pack/bundle/start/vim-moonfly-colors"]
-	path = pack/bundle/start/vim-moonfly-colors
+	path = bundle/vim/vim-moonfly-colors
 	url = https://github.com/bluz71/vim-moonfly-colors.git
 [submodule "pack/bundle/start/sonokai"]
-	path = pack/bundle/start/sonokai
+	path = bundle/vim/sonokai
 	url = https://github.com/sainnhe/sonokai.git
 [submodule "pack/bundle/start/vim-gutentags"]
-	path = pack/bundle/start/vim-gutentags
+	path = bundle/vim8/vim-gutentags
 	url = https://github.com/ludovicchabant/vim-gutentags.git
 [submodule "pack/bundle/start/seoul256.vim"]
-	path = pack/bundle/start/seoul256.vim
+	path = bundle/vim/seoul256.vim
 	url = https://github.com/junegunn/seoul256.vim.git
+[submodule "bundle/nvim/vim-qf"]
+	path = bundle/vim8/vim-qf
+	url = https://github.com/romainl/vim-qf.git
+[submodule "bundle/nvim/nvim-lspconfig"]
+	path = bundle/nvim/nvim-lspconfig
+	url = https://github.com/neovim/nvim-lspconfig.git
