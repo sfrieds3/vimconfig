@@ -58,7 +58,7 @@ function! TPV__setup ()
 
         " Remember how * was set up (if it was) and change it...
         let b:old_star_map = maparg('*')
-        nmap <special> <buffer><silent> *   :let @/ = TPV_locate_perl_var()<CR>
+        " nmap <special> <buffer><silent> *   :let @/ = TPV_locate_perl_var()<CR>
 
         " cv --> change variable...
         nmap <silent> <special> <buffer>         cv  :silent call TPV_rename_perl_var('normal')<CR>
