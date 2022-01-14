@@ -12,9 +12,10 @@ function! statusline#ToggleStatusline() abort
     set laststatus?
 endfunction
 
-function! statusline#StatusLineBuffNum() abort
+function! statusline#StatusLineWinAndBuffNum() abort
+    let wnum = tabpagewinnr(tabpagenr())
     let bnum = expand(bufnr('%'))
-    return printf("[%d]\ ", bnum)
+    return printf("[%s]\ ", wnum)
 endfunction
 
 function! statusline#StatusLineFileName() abort
