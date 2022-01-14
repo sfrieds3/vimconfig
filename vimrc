@@ -1,5 +1,9 @@
 " vim settings {{{
 
+" Load feature flags and config/pre*.vim files
+runtime! feature_flags.vim
+runtime! config/pre*.vim
+
 "use pathogen
 if filereadable(glob('$HOME/.vim/autoload/pathogen.vim'))
     execute pathogen#infect('bundle/vim/{}')
@@ -224,7 +228,7 @@ set tabline=%!tabline#Tabline()
 " plugin config {{{
 
 " LSP {{{
-if has('nvim')
+if g:enable_lsp && has('nvim')
     lua << EOF
     local nvim_lsp = require('lspconfig')
 
