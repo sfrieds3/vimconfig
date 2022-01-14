@@ -1,8 +1,12 @@
-" vim settings {{{
+" Pre-config {{{
 
 " Load feature flags and config/pre*.vim files
 runtime! feature_flags.vim
 runtime! config/pre*.vim
+
+" }}}
+
+" vim settings {{{
 
 "use pathogen
 if filereadable(glob('$HOME/.vim/autoload/pathogen.vim'))
@@ -673,6 +677,6 @@ nnoremap \ev :vsplit $MYVIMRC<cr>
 nnoremap \es :source $MYVIMRC<cr> :echo 'sourced ' . $MYVIMRC<cr>
 " }}}
 
-" Source any .vim files from ~/.vim/config {{{
-runtime! config/*.vim
+" Post-config {{{
+runtime! config/post*.vim
 " }}}
