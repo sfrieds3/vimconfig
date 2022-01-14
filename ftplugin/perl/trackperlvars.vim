@@ -71,11 +71,11 @@ function! TPV__setup ()
         nmap <special> <buffer><silent> tt  :let b:track_perl_var_locked = ! b:track_perl_var_locked<CR>:call TPV_track_perl_var()<CR>
 
         " Adjust keywords to cover sigils and qualifiers...
-        setlocal iskeyword+=$
-        setlocal iskeyword+=%
-        setlocal iskeyword+=@-@
-        setlocal iskeyword+=:
-        setlocal iskeyword-=,
+        "setlocal iskeyword+=$
+        "setlocal iskeyword+=%
+        "setlocal iskeyword+=@-@
+        "setlocal iskeyword+=:
+        "setlocal iskeyword-=,
 
         " Restore any frozen tracking...
         if b:track_perl_var_locked
