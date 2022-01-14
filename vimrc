@@ -385,6 +385,13 @@ if !has('patch-8.0.1787')
     cnoremap <C-r><C-l> <C-r>=getline('.')<CR>
 endif
 
+" easy switch to split by \<number>
+let i = 1
+while i <= 9
+    execute 'nnoremap <Leader>' . i . ' :' . i . 'wincmd w<CR>'
+    let i = i + 1
+endwhile
+
 " buffer/tab switching
 nnoremap gb :bnext<CR>
 nnoremap gB :bprevious<CR>
