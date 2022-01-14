@@ -33,7 +33,7 @@ augroup CustomizeTheme
 augroup END
 
 doautocmd ColorScheme
-colorscheme goodwolf
+colorscheme pastel
 
 " }}}
 
