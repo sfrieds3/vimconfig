@@ -34,21 +34,36 @@
 [submodule "pack/bundle/start/fzf.vim"]
 	path = bundle/vim/fzf.vim
 	url = https://github.com/junegunn/fzf.vim.git
-[submodule "pack/bundle/start/vim-moonfly-colors"]
-	path = bundle/vim/vim-moonfly-colors
-	url = https://github.com/bluz71/vim-moonfly-colors.git
-[submodule "pack/bundle/start/sonokai"]
-	path = bundle/vim/sonokai
-	url = https://github.com/sainnhe/sonokai.git
 [submodule "pack/bundle/start/vim-gutentags"]
 	path = bundle/vim8/vim-gutentags
 	url = https://github.com/ludovicchabant/vim-gutentags.git
-[submodule "pack/bundle/start/seoul256.vim"]
-	path = bundle/vim/seoul256.vim
-	url = https://github.com/junegunn/seoul256.vim.git
 [submodule "bundle/nvim/vim-qf"]
 	path = bundle/vim8/vim-qf
 	url = https://github.com/romainl/vim-qf.git
 [submodule "bundle/nvim/nvim-lspconfig"]
 	path = bundle/nvim/nvim-lspconfig
 	url = https://github.com/neovim/nvim-lspconfig.git
+[submodule "bundle/nvim/nvim-cmp"]
+	path = bundle/nvim/nvim-cmp
+	url = https://github.com/hrsh7th/nvim-cmp.git
+[submodule "bundle/nvim/cmp-buffer"]
+	path = bundle/nvim/cmp-buffer
+	url = https://github.com/hrsh7th/cmp-buffer.git
+[submodule "bundle/nvim/vim-vsnip"]
+	path = bundle/nvim/vim-vsnip
+	url = https://github.com/hrsh7th/vim-vsnip.git
+[submodule "bundle/nvim/cmp-nvim-lsp"]
+	path = bundle/nvim/cmp-nvim-lsp
+	url = https://github.com/hrsh7th/cmp-nvim-lsp.git
+[submodule "bundle/nvim/cmp-path"]
+	path = bundle/nvim/cmp-path
+	url = https://github.com/hrsh7th/cmp-path.git
+[submodule "bundle/nvim/friendly-snippets"]
+	path = bundle/nvim/friendly-snippets
+	url = https://github.com/rafamadriz/friendly-snippets.git
+[submodule "bundle/nvim/cmp-omni"]
+	path = bundle/nvim/cmp-omni
+	url = https://github.com/hrsh7th/cmp-omni.git
+[submodule "bundle/nvim/cmp-nvim-tags"]
+	path = bundle/nvim/cmp-nvim-tags
+	url = https://github.com/quangnguyen30192/cmp-nvim-tags.git
