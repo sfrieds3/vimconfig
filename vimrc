@@ -220,7 +220,8 @@ set statusline+=\ [%l/%L
 set statusline+=:%c
 " % of file
 set statusline+=\ %p%%]
-set statusline+=%{statusline#TrailingWhitespace()}
+" FIXME use autocommand to update periodically... this kills vim on large files
+"set statusline+=%{statusline#TrailingWhitespace()}
 " }}}
 
 " tabline {{{
