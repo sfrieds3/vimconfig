@@ -232,6 +232,10 @@ set tabline=%!tabline#Tabline()
 
 " plugin config {{{
 
+if has('nvim')
+    runtime! nvim/*.vim
+endif
+
 " LSP {{{
 if g:enable_lsp && has('nvim')
     lua << EOF
