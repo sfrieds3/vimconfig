@@ -9,7 +9,6 @@ cmp.setup({
     },
     mapping = {
       ['<Tab>'] = cmp.mapping.confirm({ select = true }),
-      ['<CR>'] = cmp.mapping.confirm({ select = true }),
       ['<C-Space>'] = cmp.mapping.complete(),
       ['<C-e>'] = cmp.mapping.close(),
     },
@@ -30,6 +29,12 @@ cmp.setup({
     --require('lspconfig')[nvim_lsp].setup {
     --  capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
     --}
+})
+
+cmp.setup.cmdline(':', {
+  sources = cmp.config.sources({
+    { name = 'path' }
+  })
 })
 
 -- source: https://github.com/kristijanhusak/neovim-config/blob/bleeding-edge/nvim/lua/partials/rg_source.lua
