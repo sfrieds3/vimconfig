@@ -8,6 +8,7 @@ cmp.setup({
       end,
     },
     mapping = {
+      ['<Tab>'] = cmp.mapping.confirm({ select = true }),
       ['<CR>'] = cmp.mapping.confirm({ select = true }),
       ['<C-Space>'] = cmp.mapping.complete(),
       ['<C-e>'] = cmp.mapping.close(),
@@ -18,11 +19,13 @@ cmp.setup({
       { name = 'omni' },
       { name = 'vsnip' },
       { name = 'path' },
-      { name = 'nvim_lua' },
       { name = 'tags' },
       -- { name = 'ripgrep' },
     },
-    completion = { autocomplete = false },
+    experimental = {
+      ghost_text = true,
+    },
+    --completion = { autocomplete = true },
     -- Setup lspconfig.
     --require('lspconfig')[nvim_lsp].setup {
     --  capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
