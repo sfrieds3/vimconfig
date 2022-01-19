@@ -1,5 +1,5 @@
 if exists("clang")
-	finish
+    finish
 endif
 let current_compiler = "clang"
 
