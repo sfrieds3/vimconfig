@@ -70,6 +70,7 @@
 [submodule "bundle/nvim/lsp_signature.nvim"]
 	path = bundle/nvim/lsp_signature.nvim
 	url = https://github.com/ray-x/lsp_signature.nvim.git
+	ignore = untracked
 [submodule "bundle/vim8/vim-signify"]
 	path = bundle/vim8/vim-signify
 	url = https://github.com/mhinz/vim-signify.git
