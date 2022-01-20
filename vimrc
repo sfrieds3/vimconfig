@@ -240,6 +240,7 @@ if has('nvim')
         runtime! nvim/lsp_config.vim
     endif
 endif
+" }}}
 
 " fzf {{{
 set rtp+=~/bin/fzf
