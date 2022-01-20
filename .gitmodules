@@ -70,3 +70,12 @@
 [submodule "bundle/nvim/lsp_signature.nvim"]
 	path = bundle/nvim/lsp_signature.nvim
 	url = https://github.com/ray-x/lsp_signature.nvim.git
+[submodule "bundle/vim8/vim-signify"]
+	path = bundle/vim8/vim-signify
+	url = https://github.com/mhinz/vim-signify.git
+[submodule "bundle/vim8/vim-sleuth"]
+	path = bundle/vim8/vim-sleuth
+	url = https://github.com/tpope/vim-sleuth.git
+[submodule "bundle/nvim/cmp-vsnip"]
+	path = bundle/nvim/cmp-vsnip
+	url = https://github.com/hrsh7th/cmp-vsnip
