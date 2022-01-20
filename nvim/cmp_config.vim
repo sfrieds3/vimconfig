@@ -31,12 +31,6 @@ cmp.setup({
     --}
 })
 
-cmp.setup.cmdline(':', {
-  sources = cmp.config.sources({
-    { name = 'path' }
-  })
-})
-
 -- source: https://github.com/kristijanhusak/neovim-config/blob/bleeding-edge/nvim/lua/partials/rg_source.lua
 local jobs = {}
 local result = {}
