@@ -340,6 +340,11 @@ nnoremap <BS> <C-^>
 " default Y mapping is just.. wrong
 nnoremap Y y$
 
+" easy access to black hole register
+nnoremap <leader>d "_d
+xnoremap <leader>d "_d
+xnoremap <leader>p "_dP
+
 " don't clobber unnamed register when pasting over text
 xnoremap <silent> p p:if v:register == '"'<Bar>let @@=@0<Bar>endif<cr>
 
