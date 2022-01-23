@@ -25,7 +25,7 @@ cmp.setup({
       ghost_text = true,
       native_menu = true,
     },
-    --completion = { autocomplete = true },
+    completion = { autocomplete = false },
     -- Setup lspconfig.
     --require('lspconfig')[nvim_lsp].setup {
     --  capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
