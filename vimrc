@@ -242,6 +242,7 @@ set tabline=%!tabline#Tabline()
 if has('nvim')
     runtime! nvim/cmp_config.vim
     runtime! nvim/vsnip_config.vim
+    runtime! nvim/bqf_config.vim
     if g:enable_lsp
         runtime! nvim/lsp_config.vim
     endif
