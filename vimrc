@@ -32,8 +32,14 @@ augroup CustomizeTheme
     autocmd ColorScheme * call highlights#MyHighlights()
 augroup END
 
-doautocmd ColorScheme
-colorscheme jellybeans
+if !empty($PUTTY_SESSION)
+    colorscheme jellybeans
+else
+    if has('termguicolors')
+        set termguicolors
+    end
+    colorscheme base16-classic-dark
+endif
 
 " }}}
 
