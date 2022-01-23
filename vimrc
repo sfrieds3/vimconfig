@@ -59,6 +59,8 @@ set splitright
 set autoindent
 set incsearch
 set hlsearch
+set exrc
+set secure
 
 " indentation
 set shiftwidth=4
