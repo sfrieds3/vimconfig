@@ -32,7 +32,7 @@ augroup CustomizeTheme
     autocmd ColorScheme * call highlights#MyHighlights()
 augroup END
 
-colorscheme lucius
+colorscheme apprentice
 
 " }}}
 
@@ -389,10 +389,10 @@ nnoremap [L :lfirst<CR>
 nnoremap ]L :llast<CR>
 nnoremap \l :lclose<CR>
 nnoremap \<BS> :cclose<Bar>lclose<CR>
-nnoremap <UP> :prev<CR>
-nnoremap <DOWN> :next<CR>
-nnoremap <LEFT> :cprev<CR>
-nnoremap <RIGHT> :cnext<CR>
+nnoremap <UP> :cprev<CR>
+nnoremap <DOWN> :cnext<CR>
+nnoremap <LEFT> :colder<CR>
+nnoremap <RIGHT> :cnewer<CR>
 
 " Leader,{ and Leader,} move to top and bottom of indent region
 nmap \{ <Plug>(VerticalRegionUp)
