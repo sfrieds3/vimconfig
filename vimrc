@@ -146,7 +146,7 @@ set tags=./tags;,tags;
 
 set omnifunc=syntaxcomplete#Complete
 set complete+=d
-set completeopt=longest,menuone,preview
+set completeopt=menu,menuone,noselect
 
 " simple default path
 set path=.,,
