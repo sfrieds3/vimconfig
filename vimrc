@@ -247,13 +247,13 @@ endif
 " fzf {{{
 set rtp+=~/bin/fzf
 
-nnoremap <C-p> :Files<CR>
-nnoremap \pr :History<CR>
-nnoremap \pb :Buffers<CR>
-nnoremap \pt :BTags<CR>
-nnoremap \pT :Tags<CR>
-nnoremap \pl :Lines<CR>
-nnoremap \pm :Marks<CR>
+nnoremap \ff :Files<CR>
+nnoremap \fr :History<CR>
+nnoremap \fb :Buffers<CR>
+nnoremap \ft :BTags<CR>
+nnoremap \fg :Tags<CR>
+nnoremap \fl :Lines<CR>
+nnoremap \fm :Marks<CR>
 
 "let g:fzf_history_dir = '~/.local/share/fzf-history'
 let g:fzf_layout = { 'down': '~40%' }
@@ -343,9 +343,9 @@ nnoremap <BS> <C-^>
 nnoremap Y y$
 
 " easy access to black hole register
-nnoremap <leader>d "_d
-xnoremap <leader>d "_d
-xnoremap <leader>p "_dP
+nnoremap \d "_d
+xnoremap \d "_d
+xnoremap \p "_dP
 
 " don't clobber unnamed register when pasting over text
 xnoremap <silent> p p:if v:register == '"'<Bar>let @@=@0<Bar>endif<cr>
@@ -412,9 +412,8 @@ nnoremap \> :<C-U>'[,']><CR>
 " nnoremap \b :buffers<CR>:b<Space>
 nnoremap \b :B<CR>
 
-" fuzzy find in path
-nnoremap \f :find **/*
-nnoremap \F :find **/
+" find in path
+nnoremap \fd :find **/*
 
 " redraw screen
 nnoremap \! :redraw!<CR>
@@ -445,8 +444,8 @@ nnoremap _n :ToggleLineNum<cr>
 
 " show declaration
 " from https://gist.github.com/romainl/a11c6952f012f1dd32c26fad4fa82e43
-nnoremap \d :call showdecl#ShowDeclaration(0)<CR>
-nnoremap \D :call showdecl#ShowDeclaration(1)<CR>
+nnoremap sd :call showdecl#ShowDeclaration(0)<CR>
+nnoremap sD :call showdecl#ShowDeclaration(1)<CR>
 
 " substitute operator
 nmap <silent> \s  m':set operatorfunc=substitute#Substitute<CR>g@
