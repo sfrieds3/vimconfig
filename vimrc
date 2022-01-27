@@ -32,7 +32,7 @@ augroup CustomizeTheme
     autocmd ColorScheme * call highlights#MyHighlights()
 augroup END
 
-colorscheme apprentice
+colorscheme sierra
 
 " }}}
 
