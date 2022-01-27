@@ -32,6 +32,7 @@ augroup CustomizeTheme
     autocmd ColorScheme * call highlights#MyHighlights()
 augroup END
 
+let g:sierra_Midnight = 1
 colorscheme sierra
 
 " }}}
