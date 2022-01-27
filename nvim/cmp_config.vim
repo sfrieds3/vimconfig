@@ -15,7 +15,7 @@ cmp.setup({
     sources = {
       { name = 'nvim_lsp' },
       { name = 'buffer' },
-      { name = 'omni' },
+      --{ name = 'omni' },
       { name = 'vsnip' },
       { name = 'path' },
       { name = 'tags' },
