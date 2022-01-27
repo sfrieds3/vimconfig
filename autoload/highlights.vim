@@ -29,6 +29,10 @@ function! highlights#MyHighlights() abort
     if exists('g:colors_name') && g:colors_name ==# 'seoul256'
         highlight TabLine cterm=NONE gui=NONE
     endif
+    if exists('g:colors_name') && g:colors_name ==# 'sierra'
+        highlight link NonText Comment
+        highlight link Whitespace Comment
+    endi
 
     let g:jellybeans_overrides = {
                 \    'Todo': { 'guifg': '303030', 'guibg': 'f0f000',
