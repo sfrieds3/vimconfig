@@ -32,7 +32,17 @@ function! highlights#MyHighlights() abort
     if exists('g:colors_name') && g:colors_name ==# 'sierra'
         highlight link NonText Comment
         highlight link Whitespace Comment
-    endi
+        " No reverse on diffs
+        highlight link DiffDelete Dark_Red
+        highlight link diffChanged Dark_Red
+        highlight link diffFile Dark_Red
+        highlight link diffIndexLine Dark_Red
+        highlight link diffRemoved Dark_Red
+        highlight link DiffAdd Medium_Cyan
+        highlight link DiffText Medium_Cyan
+        highlight link diffAdded Medium_Cyan
+        highlight link DiffChange Dark_Cyan
+    endif
 
     let g:jellybeans_overrides = {
                 \    'Todo': { 'guifg': '303030', 'guibg': 'f0f000',
