@@ -144,7 +144,11 @@ set tags=./tags;,tags;
 
 set omnifunc=syntaxcomplete#Complete
 set complete+=d
-set completeopt=menu,menuone,noselect
+if has('nvim')
+    set completeopt=menu,menuone,noselect
+else
+    set completeopt=longest,menuone,preview
+endif
 
 " simple default path
 set path=.,,
@@ -518,6 +522,9 @@ nnoremap <expr> <C-f> max([winheight(0) - 2, 1]) . '<C-d>' . (line('.') > line('
 
 " redir
 command! -nargs=1 -complete=command -bar -range Redir silent call redir#Redir(<q-args>, <range>, <line1>, <line2>)
+
+" quickly edit recorded macros (https://github.com/mhinz/vim-galore#quickly-edit-your-macros)
+nnoremap <leader>m  :<c-u><c-r><c-r>='let @'. v:register .' = '. string(getreg(v:register))<cr><c-f><left>
 
 " toggle paste mode and enter insert mode
 nnoremap _p :set paste! paste?<CR>i
