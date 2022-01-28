@@ -644,8 +644,8 @@ inoremap <S-Tab> <C-v><Tab>
 " stay where you are on *
 nnoremap <silent> * :let lloc = winsaveview()<cr>*:call winrestview(lloc)<cr>
 
-" Disable highlight
-nnoremap <C-l> :nohlsearch<cr>
+" Do a bunch of stuff on c-l
+nnoremap <C-l> :nohlsearch<cr>:diffupdate<cr>:syntax sync fromstart<cr><c-l>
 
 " last changed text as an object
 onoremap \_ :<C-U>execute 'normal! `[v`]'<CR>
