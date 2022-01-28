@@ -32,8 +32,8 @@ augroup CustomizeTheme
     autocmd ColorScheme * call highlights#MyHighlights()
 augroup END
 
-let g:sierra_Midnight = 1
-colorscheme sierra
+let g:sonokai_style = 'espresso'
+colorscheme sonokai
 
 " }}}
 
@@ -181,6 +181,19 @@ if !isdirectory(expand(&backupdir))
     call mkdir(expand(&backupdir), "p")
 endif
 
+" }}}
+
+" nvim settings {{{
+if has('nvim')
+    set inccommand=split
+    set shell=/usr/bin/zsh
+    "set termguicolors
+    augroup Neovim
+        autocmd!
+        autocmd TextYankPost * silent! lua vim.highlight.on_yank()
+    augroup END
+    packadd cfilter
+endif
 " }}}
 
 " statusline {{{
