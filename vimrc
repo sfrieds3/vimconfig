@@ -625,7 +625,7 @@ nnoremap \gW :g/<C-r>=expand('<cword>')<CR>/#<CR>
 
 " quick search and replace
 " https://github.com/romainl/minivimrc/blob/master/vimrc
-nnoremap \rp :'{,'}s/\<<C-r>=expand('<cword>')<CR>\>/gc<Left><Left><Left>
+nnoremap \rp :'{,'}s/\<<C-r>=expand('<cword>')<CR>\>//gc<Left><Left><Left>
 nnoremap \ra :%s/\<<C-r>=expand('<cword>')<CR>\>//gc<Left><Left><Left>
 
 " replace last search term
