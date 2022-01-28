@@ -86,3 +86,12 @@
 [submodule "bundle/nvim/nvim-bqf"]
 	path = bundle/nvim/nvim-bqf
 	url = https://github.com/kevinhwang91/nvim-bqf.git
+[submodule "bundle/nvim/sonokai"]
+	path = bundle/nvim/sonokai
+	url = https://github.com/sainnhe/sonokai.git
+[submodule "bundle/nvim/edge"]
+	path = bundle/nvim/edge
+	url = https://github.com/sainnhe/edge.git
+[submodule "bundle/nvim/gruvbox-material"]
+	path = bundle/nvim/gruvbox-material
+	url = https://github.com/sainnhe/gruvbox-material.git
