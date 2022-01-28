@@ -32,8 +32,12 @@ augroup CustomizeTheme
     autocmd ColorScheme * call highlights#MyHighlights()
 augroup END
 
-let g:sonokai_style = 'espresso'
-colorscheme sonokai
+if has('nvim')
+    let g:sonokai_style = 'espresso'
+    colorscheme sonokai
+else
+    colorscheme apprentice
+endif
 
 " }}}
 
@@ -592,7 +596,7 @@ cnoremap <expr> <C-g> getcmdtype() =~ '[\/?]' ? '<CR>/<C-r>/' : '<C-g>'
 cnoremap <expr> <C-t> getcmdtype() =~ '[\/?]' ? '<CR>?<C-r>/' : '<C-t>'
 
 " smarter c-n and c-p in Cmdline     
-cnoremap <expr> <c-n> wildmenumode() ? "\<c-n>" : "\<down>"                       
+cnoremap <expr> <c-n> wildmenumode() ? "\<c-n>" : "\<down>"
 cnoremap <expr> <c-p> wildmenumode() ? "\<c-p>" : "\<up>"
 
 " list and be ready to jump to cword
