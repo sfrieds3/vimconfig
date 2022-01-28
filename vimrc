@@ -34,7 +34,7 @@ augroup END
 
 if has('nvim')
     let g:sonokai_style = 'espresso'
-    colorscheme sonokai
+    colorscheme gruvbox-material
 else
     colorscheme apprentice
 endif
