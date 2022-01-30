@@ -95,3 +95,6 @@
 [submodule "bundle/nvim/gruvbox-material"]
 	path = bundle/nvim/gruvbox-material
 	url = https://github.com/sainnhe/gruvbox-material.git
+[submodule "bundle/vim8/rust.vim"]
+	path = bundle/vim8/rust.vim
+	url = https://github.com/rust-lang/rust.vim.git
