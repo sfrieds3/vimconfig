@@ -19,7 +19,7 @@ function! statusline#StatusLineWinAndBuffNum() abort
 endfunction
 
 function! statusline#StatusLineFileName() abort
-    let fname_str = winwidth(0) > 100 ? expand('%:F') : expand('%:t')
+    let fname_str = winwidth(0) > 160 ? expand('%:F') : expand('%:t')
     return '' != fname_str ? printf("%s ", fname_str) : '[No Name] '
 endfunction
 
