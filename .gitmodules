@@ -71,9 +71,6 @@
 	path = bundle/nvim/lsp_signature.nvim
 	url = https://github.com/ray-x/lsp_signature.nvim.git
 	ignore = untracked
-[submodule "bundle/vim8/vim-signify"]
-	path = bundle/vim8/vim-signify
-	url = https://github.com/mhinz/vim-signify.git
 [submodule "bundle/vim8/vim-sleuth"]
 	path = bundle/vim8/vim-sleuth
 	url = https://github.com/tpope/vim-sleuth.git
@@ -98,3 +95,6 @@
 [submodule "bundle/vim8/rust.vim"]
 	path = bundle/vim8/rust.vim
 	url = https://github.com/rust-lang/rust.vim.git
+[submodule "bundle/vim/vim-gitgutter"]
+	path = bundle/vim/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter.git
