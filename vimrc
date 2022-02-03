@@ -327,6 +327,11 @@ endfunction
 nnoremap _G :Glcd<CR>
 " }}}
 
+" gitgutter {{{
+let g:gitgutter_set_sign_backgrounds = 1
+let g:gitgutter_use_location_list = 1
+" }}}
+
 " markdown {{{
 let g:markdown_fenced_languages = ['python', 'perl', 'c', 'cpp', 'ruby', 'bash', 'sh', 'sql', 'html']
 let g:markdown_folding = 1
@@ -334,8 +339,8 @@ let g:markdown_folding = 1
 
 " gutentags {{{
 if has('nvim')
-    let g:gutentags_generate_on_new = 0
-    let g:gutentags_generate_on_missing = 0
+    "let g:gutentags_generate_on_new = 0
+    "let g:gutentags_generate_on_missing = 0
     let g:gutentags_cache_dir = '~/.vim/tmp/gutentags/'
     if !isdirectory(expand(g:gutentags_cache_dir))
         call mkdir(expand(g:gutentags_cache_dir), "p")
