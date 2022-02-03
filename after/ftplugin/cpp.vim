@@ -17,4 +17,4 @@ function! cpp#Format() abort
 endfunction
 setlocal formatexpr=cpp#Format()
 
-let b:undo_ftplugin = "setlocal sw< sts< fdm< fen< sua< fe<"
+let b:undo_ftplugin = "setlocal sw< sts< fdm< fen< sua< fex<"
