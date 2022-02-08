@@ -21,6 +21,7 @@ cmp.setup({
       { name = 'tags' },
       -- { name = 'ripgrep' },
     },
+
     experimental = {
       ghost_text = true,
       --native_menu = true,
@@ -30,6 +31,24 @@ cmp.setup({
     --require('lspconfig')[nvim_lsp].setup {
     --  capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
     --}
+})
+
+cmp.setup.cmdline('/', {
+  sources = {
+    { name = 'buffer' }
+  },
+  view = {
+    entries = { name = 'wildmenu', separator='|' }
+  }
+})
+
+cmp.setup.cmdline(':', {
+  sources = {
+    { name = 'cmdline' }
+  },
+  view = {
+    entries = { name = 'wildmenu', separator='|' }
+  }
 })
 
 -- source: https://github.com/kristijanhusak/neovim-config/blob/bleeding-edge/nvim/lua/partials/rg_source.lua
