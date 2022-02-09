@@ -22,7 +22,7 @@ if exists("g:py_makeprg")
     " e.g. let g:py_makeprg='pycodestyle\ --ignore=E501\ --format=pylint'
     execute "setlocal makeprg=" . g:py_makeprg
 else
-    setlocal makeprg='autopep8\ --ignore=E501,E261,E262,E265,E266\ --format=pylint'
+    setlocal makeprg='autopep8\ --ignore=E501,E261,E262,E265,E266,W504\ --format=pylint'
 endif
 
 setlocal keywordprg=pydoc3
