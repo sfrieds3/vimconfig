@@ -42,14 +42,14 @@ cmp.setup.cmdline('/', {
   }
 })
 
-cmp.setup.cmdline(':', {
-  sources = {
-    { name = 'cmdline' }
-  },
-  view = {
-    entries = { name = 'wildmenu', separator='|' }
-  }
-})
+--cmp.setup.cmdline(':', {
+--  sources = {
+--    { name = 'cmdline' }
+--  },
+--  view = {
+--    entries = { name = 'wildmenu', separator='|' }
+--  }
+--})
 
 -- source: https://github.com/kristijanhusak/neovim-config/blob/bleeding-edge/nvim/lua/partials/rg_source.lua
 local jobs = {}
