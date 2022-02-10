@@ -98,3 +98,6 @@
 [submodule "bundle/vim/vim-gitgutter"]
 	path = bundle/vim/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter.git
+[submodule "bundle/nvim/cmp-cmdline"]
+	path = bundle/nvim/cmp-cmdline
+	url = https://github.com/hrsh7th/cmp-cmdline.git
