@@ -255,6 +255,12 @@ set tabline=%!tabline#Tabline()
 
 " plugin config {{{
 
+" airline {{{
+let g:airline#extensions#term#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+" }}}
+
 " neovim plugins {{{
 if has('nvim')
     runtime! nvim/cmp_config.vim
