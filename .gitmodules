@@ -101,3 +101,9 @@
 [submodule "bundle/nvim/cmp-cmdline"]
 	path = bundle/nvim/cmp-cmdline
 	url = https://github.com/hrsh7th/cmp-cmdline.git
+[submodule "bundle/vim/vim-airline"]
+	path = bundle/vim/vim-airline
+	url = https://github.com/vim-airline/vim-airline.git
+[submodule "bundle/vim/vim-dirvish"]
+	path = bundle/vim/vim-dirvish
+	url = https://github.com/justinmk/vim-dirvish.git
