@@ -259,6 +259,8 @@ set tabline=%!tabline#Tabline()
 let g:airline#extensions#term#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+let g:airline#extensions#tabline#show_buffers = 1
+let g:airline_symbols_ascii = 1
 " }}}
 
 " neovim plugins {{{
