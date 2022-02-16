@@ -264,6 +264,11 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 let g:airline#extensions#tabline#show_buffers = 1
 let g:airline_symbols_ascii = 1
+
+call airline#parts#define_minwidth('branch', 120)
+call airline#parts#define_minwidth('tagbar', 120)
+call airline#parts#define_minwidth('whitespace', 80)
+call airline#parts#define_minwidth('ffenc', 120)
 " }}}
 
 " neovim plugins {{{
