@@ -8,7 +8,8 @@ runtime! config/pre*.vim
 
 " vim settings {{{
 
-"use pathogen
+" pathogen {{{
+
 if filereadable(glob('$HOME/.vim/autoload/pathogen.vim'))
     execute pathogen#infect('bundle/vim/{}')
     execute pathogen#infect('colors/{}')
@@ -24,6 +25,8 @@ endif
 if v:version >= 800 || has('nvim')
     execute pathogen#infect('bundle/vim8/{}')
 endif
+
+" }}}
 
 " colorscheme {{{
 
