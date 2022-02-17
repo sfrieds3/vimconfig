@@ -107,3 +107,12 @@
 [submodule "bundle/vim/vim-dirvish"]
 	path = bundle/vim/vim-dirvish
 	url = https://github.com/justinmk/vim-dirvish.git
+[submodule "bundle/vim/vim-unimpaired"]
+	path = bundle/vim/vim-unimpaired
+	url = https://github.com/tpope/vim-unimpaired.git
+[submodule "bundle/vim/vim-repeat"]
+	path = bundle/vim/vim-repeat
+	url = https://github.com/tpope/vim-repeat.git
+[submodule "bundle/vim/vim-commentary"]
+	path = bundle/vim/vim-commentary
+	url = https://github.com/tpope/vim-commentary.git
