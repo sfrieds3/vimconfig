@@ -62,6 +62,7 @@ set incsearch
 set hlsearch
 set exrc
 set secure
+set noshowmode
 
 " indentation
 set shiftwidth=4
@@ -270,6 +271,27 @@ call airline#parts#define_minwidth('tagbar', 120)
 call airline#parts#define_minwidth('searchcount', 120)
 call airline#parts#define_minwidth('whitespace', 80)
 call airline#parts#define_minwidth('ffenc', 120)
+
+let g:airline_mode_map = {
+            \ '__'     : '-',
+            \ 'c'      : 'C',
+            \ 'i'      : 'I',
+            \ 'ic'     : 'I',
+            \ 'ix'     : 'I',
+            \ 'n'      : 'N',
+            \ 'multi'  : 'M',
+            \ 'ni'     : 'N',
+            \ 'no'     : 'N',
+            \ 'R'      : 'R',
+            \ 'Rv'     : 'R',
+            \ 's'      : 'S',
+            \ 'S'      : 'S',
+            \ '^S'     : 'S',
+            \ 't'      : 'T',
+            \ 'v'      : 'V',
+            \ 'V'      : 'V',
+            \ '^V'     : 'V',
+            \ }
 " }}}
 
 " neovim plugins {{{
