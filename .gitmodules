@@ -116,3 +116,12 @@
 [submodule "bundle/vim/vim-commentary"]
 	path = bundle/vim/vim-commentary
 	url = https://github.com/tpope/vim-commentary.git
+[submodule "bundle/nvim/registers.nvim"]
+	path = bundle/nvim/registers.nvim
+	url = https://github.com/tversteeg/registers.nvim.git
+[submodule "bundle/vim/csv.vim"]
+	path = bundle/vim/csv.vim
+	url = https://github.com/chrisbra/csv.vim.git
+[submodule "bundle/vim/NrrwRgn"]
+	path = bundle/vim/NrrwRgn
+	url = https://github.com/chrisbra/NrrwRgn.git
