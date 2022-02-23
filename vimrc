@@ -265,7 +265,8 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 let g:airline#extensions#tabline#show_buffers = 1
 let g:airline_symbols_ascii = 1
-let g:airline#extensions#searchcount#enabled = 0                                                   
+let g:airline#extensions#searchcount#enabled = 0
+let g:airline#extensions#hunks#enabled = 0
 
 call airline#parts#define_minwidth('branch', 120)
 call airline#parts#define_minwidth('tagbar', 120)
@@ -279,14 +280,14 @@ if !exists('g:airline_symbols')
 endif
 let g:airline_symbols.whitespace = 'Ξ'
 
-function! SetAirlineExtensions()                                                                    
-    if line('$') > 20000                                                                            
-        call airline#extensions#whitespace#disable()                                                
-    endif                                                                                           
-endfunction                                                                                         
-                                                                                                    
-augroup AirlineExtensions                                                                           
-    autocmd! BufNewFile,BufRead call SetAirlineExtensions()                                         
+function! SetAirlineExtensions()
+    if line('$') > 20000
+        call airline#extensions#whitespace#disable()
+    endif
+endfunction
+
+augroup AirlineExtensions
+    autocmd! BufNewFile,BufRead call SetAirlineExtensions()
 augroup END
 
 let g:airline_mode_map = {
