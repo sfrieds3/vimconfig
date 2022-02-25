@@ -179,8 +179,11 @@ set backup
 set backupext=.bak
 set noswapfile
 
-" save lots of history
-set viminfo='1000,f1,<1000,/10000,:10000
+if has('nvim')
+    set shada='1000,f1,<1000,/10000,:10000
+else
+    set viminfo='1000,f1,<1000,/10000,:10000
+endif
 
 set undodir=~/.vim/tmp/undo// " undo files
 set backupdir=~/.vim/tmp/backup// " backups
@@ -264,7 +267,6 @@ let g:airline#extensions#term#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 let g:airline#extensions#tabline#show_buffers = 1
-let g:airline_symbols_ascii = 1
 let g:airline#extensions#searchcount#enabled = 0
 let g:airline#extensions#hunks#enabled = 0
 
@@ -278,6 +280,16 @@ let g:airline_symbols_ascii = 1
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.colnr = ' :'
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ' :'
+let g:airline_symbols.maxlinenr = '☰ '
+let g:airline_symbols.paste = 'ρ'
 let g:airline_symbols.whitespace = 'Ξ'
 
 function! SetAirlineExtensions()
