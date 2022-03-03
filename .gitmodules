@@ -125,3 +125,6 @@
 [submodule "bundle/vim/NrrwRgn"]
 	path = bundle/vim/NrrwRgn
 	url = https://github.com/chrisbra/NrrwRgn.git
+[submodule "bundle/vim8/vim-go"]
+	path = bundle/vim8/vim-go
+	url = https://github.com/fatih/vim-go.git
