@@ -273,7 +273,7 @@ let g:airline#extensions#hunks#enabled = 0
 call airline#parts#define_minwidth('branch', 120)
 call airline#parts#define_minwidth('tagbar', 120)
 call airline#parts#define_minwidth('searchcount', 120)
-call airline#parts#define_minwidth('whitespace', 80)
+call airline#parts#define_minwidth('whitespace', 120)
 call airline#parts#define_minwidth('ffenc', 120)
 
 let g:airline_symbols_ascii = 1
