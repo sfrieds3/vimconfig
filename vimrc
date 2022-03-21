@@ -417,6 +417,10 @@ if has('nvim')
 endif
 " }}}
 
+" rust {{{
+let g:rustfmt_autosave = 1
+" }}}
+
 " }}}
 
 " mappings {{{
