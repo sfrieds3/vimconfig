@@ -12,7 +12,7 @@ endif
 nnoremap <buffer> <silent> _F call PythonFuncGrep()
 
 function! python#Format() abort
-    let fp = exists("g:py_formatprg") ? g:py_formatprg : 'yapf'
+    let fp = exists("g:py_formatprg") ? g:py_formatprg : 'yapf --line-length=88'
     let lst = v:lnum + v:count - 1
     silent execute v:lnum . ',' . lst . '!' . fp
 endfunction
