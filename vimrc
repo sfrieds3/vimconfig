@@ -709,6 +709,10 @@ nnoremap \gW :g/<C-r>=expand('<cword>')<CR>/#<CR>
 nnoremap \rp :'{,'}s/\<<C-r>=expand('<cword>')<CR>\>//gc<Left><Left><Left>
 nnoremap \ra :%s/\<<C-r>=expand('<cword>')<CR>\>//gc<Left><Left><Left>
 
+" replace next/previous occurrence (. to repeat)
+nnoremap \rn *``cgn
+nnoremap \rp #``cgN
+
 " replace last search term
 nnoremap <expr>  _R  ':%s/' . @/ . '//gc<Left><Left><Left>'
 
