@@ -67,10 +67,6 @@
 [submodule "bundle/nvim/cmp-nvim-tags"]
 	path = bundle/nvim/cmp-nvim-tags
 	url = https://github.com/quangnguyen30192/cmp-nvim-tags.git
-[submodule "bundle/nvim/lsp_signature.nvim"]
-	path = bundle/nvim/lsp_signature.nvim
-	url = https://github.com/ray-x/lsp_signature.nvim.git
-	ignore = untracked
 [submodule "bundle/vim8/vim-sleuth"]
 	path = bundle/vim8/vim-sleuth
 	url = https://github.com/tpope/vim-sleuth.git
@@ -128,3 +124,9 @@
 [submodule "bundle/vim8/vim-go"]
 	path = bundle/vim8/vim-go
 	url = https://github.com/fatih/vim-go.git
+[submodule "bundle/nvim/subpy"]
+	path = bundle/nvim/subpy
+	url = git@github.com:scwfri/subpy.git
+[submodule "bundle/nvim/cmp-nvim-lsp-signature-help"]
+	path = bundle/nvim/cmp-nvim-lsp-signature-help
+	url = https://github.com/hrsh7th/cmp-nvim-lsp-signature-help.git
