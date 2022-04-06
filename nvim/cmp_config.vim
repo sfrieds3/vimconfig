@@ -12,26 +12,24 @@ cmp.setup({
       ['<C-Space>'] = cmp.mapping.complete(),
       ['<C-e>'] = cmp.mapping.close(),
     },
-    sources = {
+    sources = cmp.config.sources({
       { name = 'nvim_lsp' },
       { name = 'nvim_lsp_signature_help' },
-      { name = 'buffer' },
-      --{ name = 'omni' },
       { name = 'vsnip' },
+      -- { name = 'ripgrep' },
+    }, {
+      { name = 'buffer' },
       { name = 'path' },
       { name = 'tags' },
-      -- { name = 'ripgrep' },
-    },
+    }),
 
     experimental = {
       ghost_text = true,
-      --native_menu = true,
     },
-    --completion = { autocomplete = false },
-    -- Setup lspconfig.
-    --require('lspconfig')[nvim_lsp].setup {
-    --  capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-    --}
+    
+    view = {
+        -- entries = 'native',
+    },
 })
 
 cmp.setup.cmdline('/', {
@@ -42,15 +40,6 @@ cmp.setup.cmdline('/', {
     entries = { name = 'wildmenu', separator='|' }
   }
 })
-
---cmp.setup.cmdline(':', {
---  sources = {
---    { name = 'cmdline' }
---  },
---  view = {
---    entries = { name = 'wildmenu', separator='|' }
---  }
---})
 
 -- source: https://github.com/kristijanhusak/neovim-config/blob/bleeding-edge/nvim/lua/partials/rg_source.lua
 local jobs = {}
