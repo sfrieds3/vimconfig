@@ -124,9 +124,6 @@
 [submodule "bundle/vim8/vim-go"]
 	path = bundle/vim8/vim-go
 	url = https://github.com/fatih/vim-go.git
-[submodule "bundle/nvim/subpy"]
-	path = bundle/nvim/subpy
-	url = git@github.com:scwfri/subpy.git
 [submodule "bundle/nvim/cmp-nvim-lsp-signature-help"]
 	path = bundle/nvim/cmp-nvim-lsp-signature-help
 	url = https://github.com/hrsh7th/cmp-nvim-lsp-signature-help.git
