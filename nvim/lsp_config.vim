@@ -6,6 +6,10 @@ vim.api.nvim_set_keymap('n', '__', '<cmd>lua vim.diagnostic.open_float()<CR>', o
 vim.api.nvim_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
 vim.api.nvim_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
 vim.api.nvim_set_keymap('n', '_q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
+vim.api.nvim_set_keymap('n', '_Dd', '<cmd>lua vim.diagnostic.disable(0)<CR>', opts)
+vim.api.nvim_set_keymap('n', '_De', '<cmd>lua vim.diagnostic.disable(0)<CR>', opts)
+vim.api.nvim_set_keymap('n', '_DD', '<cmd>lua vim.diagnostic.disable()<CR>', opts)
+vim.api.nvim_set_keymap('n', '_DE', '<cmd>lua vim.diagnostic.disable()<CR>', opts)
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
