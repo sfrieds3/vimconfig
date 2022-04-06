@@ -1,23 +1,19 @@
 lua << EOF
--- Mappings.
--- See `:help vim.diagnostic.*` for documentation on any of the below functions
-local opts = { noremap=true, silent=true }
-vim.api.nvim_set_keymap('n', '__', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
-vim.api.nvim_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
-vim.api.nvim_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
-vim.api.nvim_set_keymap('n', '_q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
-vim.api.nvim_set_keymap('n', '_Dd', '<cmd>lua vim.diagnostic.disable(0)<CR>', opts)
-vim.api.nvim_set_keymap('n', '_DD', '<cmd>lua vim.diagnostic.disable()<CR>', opts)
-vim.api.nvim_set_keymap('n', '_De', '<cmd>lua vim.diagnostic.enable(0)<CR>', opts)
-vim.api.nvim_set_keymap('n', '_DE', '<cmd>lua vim.diagnostic.enable()<CR>', opts)
-
--- Use an on_attach function to only map the following keys
--- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
   -- Enable completion triggered by <c-x><c-o>
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
-  -- Mappings.
+    -- See `:help vim.diagnostic.*` for documentation on any of the below functions
+  local opts = { noremap=true, silent=true }
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', '__', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', '_q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', '_Dd', '<cmd>lua vim.diagnostic.disable(0)<CR>', opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', '_DD', '<cmd>lua vim.diagnostic.disable()<CR>', opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', '_De', '<cmd>lua vim.diagnostic.enable(0)<CR>', opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', '_DE', '<cmd>lua vim.diagnostic.enable()<CR>', opts)
+
   -- See `:help vim.lsp.*` for documentation on any of the below functions
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
@@ -35,8 +31,6 @@ local on_attach = function(client, bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '_F', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 end
 
--- Use a loop to conveniently call 'setup' on multiple servers and
--- map buffer local keybindings when the language server attaches
 local servers = {
     'pylsp',
     --'pyright',
@@ -49,7 +43,6 @@ for _, lsp in pairs(servers) do
   require('lspconfig')[lsp].setup {
     on_attach = on_attach,
     flags = {
-      -- This will be the default in neovim 0.7+
       debounce_text_changes = 150,
     }
   }
