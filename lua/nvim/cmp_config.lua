@@ -1,4 +1,3 @@
-lua << EOF
 local cmp = require'cmp'
 
 cmp.setup({
@@ -164,4 +163,3 @@ function Source.documentation(_, context)
 end
 
 cmp.register_source('ripgrep', Source)
-EOF

@@ -328,12 +328,8 @@ let g:airline_mode_map = {
 
 " neovim plugins {{{
 if has('nvim')
-    runtime! nvim/cmp_config.vim
+    lua require('nvim')
     runtime! nvim/vsnip_config.vim
-    runtime! nvim/bqf_config.vim
-    if g:enable_lsp
-        runtime! nvim/lsp_config.vim
-    endif
 endif
 " }}}
 

@@ -1,4 +1,3 @@
-lua << EOF
 require('bqf').setup({
   auto_enable = true,
   auto_resize_height = true,
@@ -6,4 +5,3 @@ require('bqf').setup({
     auto_preview = false,
   },
 })
-EOF
