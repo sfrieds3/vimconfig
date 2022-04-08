@@ -200,6 +200,7 @@ endif
 
 " nvim settings {{{
 if has('nvim')
+    let g:python3_host_prog = '$PYTHON3_VENV'
     set inccommand=split
     set shell=/usr/bin/zsh
     "set termguicolors
