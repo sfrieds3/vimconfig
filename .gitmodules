@@ -127,3 +127,6 @@
 [submodule "bundle/nvim/cmp-nvim-lsp-signature-help"]
 	path = bundle/nvim/cmp-nvim-lsp-signature-help
 	url = https://github.com/hrsh7th/cmp-nvim-lsp-signature-help.git
+[submodule "bundle/nvim/cscope.nvim"]
+	path = bundle/nvim/cscope.nvim
+	url = https://github.com/mfulz/cscope.nvim.git

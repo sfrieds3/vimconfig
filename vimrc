@@ -415,7 +415,7 @@ if has('nvim')
 endif
 " }}}
 
-" cscope (https://github.com/mfulz/cscope.nvim) {{{
+" cscope {{{
 let g:cscope_dir = '~/.cache/nvim-cscope'
 let g:cscope_map_keys = 1
 let g:cscope_update_on_start = 1
