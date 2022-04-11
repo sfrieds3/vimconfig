@@ -33,6 +33,9 @@ local on_attach = function(client, bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '_F', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 end
 
+-- diagnostic source in virtual text
+vim.diagnostic.config({ virtual_text = { source = true, }})
+
 local servers = {
     'pylsp',
     --'pyright',
