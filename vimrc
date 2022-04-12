@@ -200,6 +200,7 @@ endif
 
 " nvim settings {{{
 if has('nvim')
+    let g:do_filetype_lua = 1
     let g:python3_host_prog = '$PYTHON3_VENV'
     set inccommand=split
     set shell=/usr/bin/zsh
@@ -328,8 +329,6 @@ let g:airline_mode_map = {
 
 " neovim plugins {{{
 if has('nvim')
-    lua require('nvim')
-    lua require('plugins')
     runtime! nvim/vsnip_config.vim
 endif
 " }}}
